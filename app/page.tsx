@@ -74,26 +74,24 @@ export default function Home() {
   };
 
   return (
-    <div className="flex-1 flex flex-row min-w-0 h-dvh bg-background">
-      <IntlProvider>
-        <ThemeProvider>
-          <GraphProvider
-            data={DATA}
-            datasetConfig={DATASET_CONFIG}
-            visualisationConfig={VISUALISATION_CONFIG}
-            title="My Visualisation"
-            width={800}
-            height={500}
-          >
-            <Graph
-              renderTitle={({ title }) => (
-                <h2 className="text-2xl font-bold">{title}</h2>
-              )}
-              stickerPaths={stickerPaths}
-            />
-          </GraphProvider>
-        </ThemeProvider>
-      </IntlProvider>
+    <div className="flex items-center justify-center h-dvh px-16">
+        <IntlProvider>
+          <ThemeProvider>
+            <GraphProvider
+              data={DATA}
+              datasetConfig={DATASET_CONFIG}
+              visualisationConfig={VISUALISATION_CONFIG}
+              title="My Visualisation"
+            >
+              <Graph
+                renderTitle={({ title }) => (
+                  <h2 className="text-2xl font-bold">{title}</h2>
+                )}
+                stickerPaths={stickerPaths}
+              />
+            </GraphProvider>
+          </ThemeProvider>
+        </IntlProvider>
     </div>
   );
 }
