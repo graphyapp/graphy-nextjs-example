@@ -8,9 +8,11 @@ import {
   IntlProvider,
   DatasetConfig,
   DataType,
+  VisualisationConfig,
+  RawData,
 } from "@graphysdk/core";
 
-const DATA = {
+const DATA: RawData = {
   rows: [
     { month: "2024-01", "Product A": "15000", "Product B": "9000" },
     { month: "2024-02", "Product A": "15800", "Product B": "9800" },
@@ -28,31 +30,12 @@ const DATASET_CONFIG: DatasetConfig = {
     { key: "Product B", label: "Product B", dataType: { type: DataType.Text } },
   ],
   isDataHorizontal: false,
-} as const;
+};
 
-const VISUALISATION_CONFIG = {
+const VISUALISATION_CONFIG: VisualisationConfig = {
   type: "bar",
   barPosition: "grouped",
-  shouldStartFromZero: true,
-  hasGridLines: true,
-  showDataLabels: true,
-  legendPosition: "top",
-  flipAxes: false,
-  topAxisLabel: "Product Category",
-  bottomAxisLabel: "Sales Revenue",
-  leftAxisLabel: "Profit",
-  rightAxisLabel: "Profit",
-  customLineLabel: "Profit",
-  xGoalValue: null,
-  yGoalValue: null,
-  curveType: "linear",
-  presetPowerUp: null,
-  customPowerUp: null,
-  averageLineSeriesKey: null,
-  headlineMetric: null,
-  customGoalLineLabel: null,
-  customLineValue: null,
-} as const;
+};
 
 export default function Home() {
   // Note: Currently graphySDK is not working with SSR.
@@ -75,23 +58,23 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center h-dvh px-16">
-        <IntlProvider>
-          <ThemeProvider>
-            <GraphProvider
-              data={DATA}
-              datasetConfig={DATASET_CONFIG}
-              visualisationConfig={VISUALISATION_CONFIG}
-              title="My Visualisation"
-            >
-              <Graph
-                renderTitle={({ title }) => (
-                  <h2 className="text-2xl font-bold">{title}</h2>
-                )}
-                stickerPaths={stickerPaths}
-              />
-            </GraphProvider>
-          </ThemeProvider>
-        </IntlProvider>
+      <IntlProvider>
+        <ThemeProvider>
+          <GraphProvider
+            data={DATA}
+            datasetConfig={DATASET_CONFIG}
+            visualisationConfig={VISUALISATION_CONFIG}
+            title="My Visualisation"
+          >
+            <Graph
+              renderTitle={({ title }) => (
+                <h2 className="text-2xl font-bold">{title}</h2>
+              )}
+              stickerPaths={stickerPaths}
+            />
+          </GraphProvider>
+        </ThemeProvider>
+      </IntlProvider>
     </div>
   );
 }
