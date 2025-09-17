@@ -1,24 +1,12 @@
 import { Graph, GraphProvider } from "@graphysdk/core";
 import { stickerPaths } from "../config/sticker-paths";
+import { SPEND_BREAKDOWN } from "./datasets/spend-breakdown";
 
 export const SpendBreakdown = () => {
   return (
     <GraphProvider
-      data={{
-        rows: [
-          { c1: "Headcount", c2: "$38,4560" },
-          { c1: "Legal", c2: "$4,5780" },
-          { c1: "Marketing", c2: "$9,4560" },
-          { c1: "Office", c2: "$12,9850" },
-        ],
-      }}
-      datasetConfig={{
-        properties: [
-          { key: "c1", label: "Category" },
-          { key: "c2", label: "Value" },
-        ],
-        isDataHorizontal: false,
-      }}
+      data={SPEND_BREAKDOWN.data}
+      datasetConfig={SPEND_BREAKDOWN.config}
       visualisationConfig={{
         type: "pie",
         locale: "EN_GB",
