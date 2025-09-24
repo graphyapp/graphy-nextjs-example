@@ -4,10 +4,14 @@ import React, { useEffect, useState } from "react";
 import { GlobalEmissions } from "./examples/GlobalEmissions";
 import { Traffic } from "./examples/Traffic";
 import { SpendBreakdown } from "./examples/SpendBreakdown";
+import type { GraphSizing } from "@graphysdk/core";
 
 export default function Home() {
   // Note: Currently graphySDK is not working with SSR.
   const [isMounted, setIsMounted] = useState(false);
+  const [sizingMode, setSizingMode] =
+    useState<GraphSizing["mode"]>("keepAspectRatio");
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -16,11 +20,82 @@ export default function Home() {
     return <div>Loading...</div>;
   }
 
+  let sizing: GraphSizing;
+
+  switch (sizingMode) {
+    case "fixed":
+      sizing = { mode: "fixed", width: 600, height: 400 };
+      break;
+    case "responsive":
+      sizing = { mode: "responsive" };
+      break;
+    case "keepAspectRatio":
+      sizing = {
+        mode: "keepAspectRatio",
+        intrinsicWidth: 500,
+        intrinsicHeight: 500,
+      };
+      break;
+  }
+
+  const getItemClasses = () => {
+    switch (sizingMode) {
+      case "fixed":
+        return "w-[600px] h-[400px] flex-shrink-0";
+      case "responsive":
+        return "w-full h-[500px]";
+      case "keepAspectRatio":
+        return "";
+    }
+  };
+
+  const getContainerClasses = () => {
+    if (sizingMode === "keepAspectRatio") {
+      return "grid grid-cols-2 gap-8 mx-auto w-full";
+    }
+    return "flex flex-col items-center gap-8 w-full";
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center px-16 gap-8 max-w-[800px] mx-auto my-8">
-      <GlobalEmissions />
-      <Traffic />
-      <SpendBreakdown />
+    <div className="flex flex-col items-center justify-center px-16 gap-8 mx-auto my-8">
+      <div className="flex gap-4 mb-4">
+        <button
+          onClick={() => setSizingMode("fixed")}
+          className={`px-3 py-1 rounded-md ${
+            sizingMode === "fixed" ? "bg-gray-700" : ""
+          }`}
+        >
+          Fixed size
+        </button>
+        <button
+          onClick={() => setSizingMode("responsive")}
+          className={`px-3 py-1 rounded-md ${
+            sizingMode === "responsive" ? "bg-gray-700" : ""
+          }`}
+        >
+          Responsive
+        </button>
+        <button
+          onClick={() => setSizingMode("keepAspectRatio")}
+          className={`px-3 py-1 rounded-md ${
+            sizingMode === "keepAspectRatio" ? "bg-gray-700" : ""
+          }`}
+        >
+          Aspect ratio
+        </button>
+      </div>
+
+      <div className={getContainerClasses()}>
+        <div className={getItemClasses()}>
+          <GlobalEmissions sizing={sizing} />
+        </div>
+        <div className={getItemClasses()}>
+          <Traffic sizing={sizing} />
+        </div>
+        <div className={getItemClasses()}>
+          <SpendBreakdown sizing={sizing} />
+        </div>
+      </div>
     </div>
   );
 }
