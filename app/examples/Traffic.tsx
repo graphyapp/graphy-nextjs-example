@@ -13,16 +13,14 @@ export const Traffic = ({ sizing }: TrafficProps) => {
       config={{
         data: TRAFFIC.data,
         datasetConfig: TRAFFIC.config,
-        annotations: {
-          annotations: [
-            {
-              id: "24:c5",
-              config: { type: "highlight", highlight: "data-point" },
-              rowIndex: 24,
-              propertyKey: "c5",
-            },
-          ],
-        },
+        annotations: [
+          {
+            id: "24:c5",
+            config: { type: "highlight", highlight: "data-point" },
+            rowIndex: 24,
+            propertyKey: "c5",
+          },
+        ],
         visualisationConfig: {
           type: "line",
           barPosition: "stacked",
