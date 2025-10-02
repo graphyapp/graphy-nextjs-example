@@ -1,6 +1,5 @@
-import { Graph, GraphProvider } from "@graphysdk/core";
-import { stickerPaths } from "../config/sticker-paths";
-import { TRAFFIC } from "./datasets/traffic";
+import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
+import { TRAFFIC } from "../datasets/traffic";
 import type { GraphSizing } from "@graphysdk/core";
 
 interface TrafficProps {
@@ -59,16 +58,12 @@ export const Traffic = ({ sizing }: TrafficProps) => {
           hasTransparentBackground: false,
         },
         numberFormat: { abbreviation: "auto", decimalPlaces: "auto" },
-        title: "73% increase in organic traffic in April",
+        titleDocument: buildChartTitleDocument({
+          title: "73% increase in organic traffic in April",
+        }),
       }}
     >
-      <Graph
-        renderTitle={({ title }) => (
-          <h2 className="text-2xl font-bold">{title}</h2>
-        )}
-        stickerPaths={stickerPaths}
-        sizing={sizing}
-      />
+      <Graph isEditable={false} sizing={sizing} />
     </GraphProvider>
   );
 };
