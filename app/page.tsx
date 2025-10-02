@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 import { GlobalEmissions } from "./examples/GlobalEmissions";
 import { Traffic } from "./examples/Traffic";
 import { SpendBreakdown } from "./examples/SpendBreakdown";
-import type { GraphSizing } from "@graphysdk/core";
+import { type GraphSizing } from "@graphysdk/core";
+import { EditableExample } from "./EditableExample";
 
 export default function Home() {
   // Note: Currently graphySDK is not working with SSR.
   const [isMounted, setIsMounted] = useState(false);
-  const [sizingMode, setSizingMode] =
-    useState<GraphSizing["mode"]>("keepAspectRatio");
+  const [sizingMode, setSizingMode] = useState<GraphSizing["mode"]>("fixed");
 
   useEffect(() => {
     setIsMounted(true);
@@ -56,46 +56,48 @@ export default function Home() {
     return "flex flex-col items-center gap-8 w-full";
   };
 
-  return (
-    <div className="flex flex-col items-center justify-center px-16 gap-8 mx-auto my-8">
-      <div className="flex gap-4 mb-4">
-        <button
-          onClick={() => setSizingMode("fixed")}
-          className={`px-3 py-1 rounded-md ${
-            sizingMode === "fixed" ? "bg-gray-700" : ""
-          }`}
-        >
-          Fixed size
-        </button>
-        <button
-          onClick={() => setSizingMode("responsive")}
-          className={`px-3 py-1 rounded-md ${
-            sizingMode === "responsive" ? "bg-gray-700" : ""
-          }`}
-        >
-          Responsive
-        </button>
-        <button
-          onClick={() => setSizingMode("keepAspectRatio")}
-          className={`px-3 py-1 rounded-md ${
-            sizingMode === "keepAspectRatio" ? "bg-gray-700" : ""
-          }`}
-        >
-          Aspect ratio
-        </button>
-      </div>
+  return <EditableExample />;
 
-      <div className={getContainerClasses()}>
-        <div className={getItemClasses()}>
-          <GlobalEmissions sizing={sizing} />
-        </div>
-        <div className={getItemClasses()}>
-          <Traffic sizing={sizing} />
-        </div>
-        <div className={getItemClasses()}>
-          <SpendBreakdown sizing={sizing} />
-        </div>
-      </div>
-    </div>
-  );
+  // return (
+  //   <div className="flex flex-col items-center justify-center px-16 gap-8 mx-auto my-8">
+  //     <div className="flex gap-4 mb-4">
+  //       <button
+  //         onClick={() => setSizingMode("fixed")}
+  //         className={`px-3 py-1 rounded-md ${
+  //           sizingMode === "fixed" ? "bg-gray-300" : ""
+  //         }`}
+  //       >
+  //         Fixed size
+  //       </button>
+  //       <button
+  //         onClick={() => setSizingMode("responsive")}
+  //         className={`px-3 py-1 rounded-md ${
+  //           sizingMode === "responsive" ? "bg-gray-300" : ""
+  //         }`}
+  //       >
+  //         Responsive
+  //       </button>
+  //       <button
+  //         onClick={() => setSizingMode("keepAspectRatio")}
+  //         className={`px-3 py-1 rounded-md ${
+  //           sizingMode === "keepAspectRatio" ? "bg-gray-300" : ""
+  //         }`}
+  //       >
+  //         Aspect ratio
+  //       </button>
+  //     </div>
+
+  //     <div className={getContainerClasses()}>
+  //       <div className={getItemClasses()}>
+  //         <GlobalEmissions sizing={sizing} />
+  //       </div>
+  //       <div className={getItemClasses()}>
+  //         <Traffic sizing={sizing} />
+  //       </div>
+  //       <div className={getItemClasses()}>
+  //         <SpendBreakdown sizing={sizing} />
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
 }

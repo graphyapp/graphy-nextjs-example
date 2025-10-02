@@ -1,5 +1,4 @@
-import { Graph, GraphProvider } from "@graphysdk/core";
-import { stickerPaths } from "../config/sticker-paths";
+import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
 import { GLOBAL_EMISSIONS } from "./datasets/global-emissions";
 import type { GraphSizing } from "@graphysdk/core";
 
@@ -48,16 +47,12 @@ export const GlobalEmissions = ({ sizing }: GlobalEmissionsProps) => {
           hasTransparentBackground: false,
         },
         numberFormat: { abbreviation: "auto", decimalPlaces: "auto" },
-        title: "Have global CO₂ emissions peaked?",
+        titleDocument: buildChartTitleDocument({
+          title: "Have global CO₂ emissions peaked?",
+        }),
       }}
     >
-      <Graph
-        renderTitle={({ title }) => (
-          <h2 className="text-2xl font-bold">{title}</h2>
-        )}
-        stickerPaths={stickerPaths}
-        sizing={sizing}
-      />
+      <Graph isEditable={false} sizing={sizing} />
     </GraphProvider>
   );
 };

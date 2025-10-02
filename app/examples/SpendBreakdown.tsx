@@ -1,5 +1,4 @@
-import { Graph, GraphProvider } from "@graphysdk/core";
-import { stickerPaths } from "../config/sticker-paths";
+import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
 import { SPEND_BREAKDOWN } from "./datasets/spend-breakdown";
 import type { GraphSizing } from "@graphysdk/core";
 
@@ -51,7 +50,7 @@ export const SpendBreakdown = ({ sizing }: SpendBreakdownProps) => {
           font: "technical",
           theme: "custom",
           palette: null,
-          textScale: "1.2",
+          textScale: "1",
           background: "LIGHT",
           borderStyle: "none",
           seriesConfig: {
@@ -71,16 +70,12 @@ export const SpendBreakdown = ({ sizing }: SpendBreakdownProps) => {
           hasTransparentBackground: false,
         },
         numberFormat: { abbreviation: "auto", decimalPlaces: "auto" },
-        title: "Headcount represents 59% of spend",
+        titleDocument: buildChartTitleDocument({
+          title: "Headcount represents 59% of spend",
+        }),
       }}
     >
-      <Graph
-        renderTitle={({ title }) => (
-          <h2 className="text-2xl font-bold">{title}</h2>
-        )}
-        stickerPaths={stickerPaths}
-        sizing={sizing}
-      />
+      <Graph isEditable={false} sizing={sizing} />
     </GraphProvider>
   );
 };

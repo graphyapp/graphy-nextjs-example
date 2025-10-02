@@ -8,10 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@graphysdk/core": "^0.0.13",
+    "@chakra-ui/react": "^3.27.0",
+    "@graphysdk/core": "^0.0.29",
+    "@graphysdk/editor": "^0.0.29",
     "next": "15.5.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
