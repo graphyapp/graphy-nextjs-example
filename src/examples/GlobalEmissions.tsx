@@ -1,6 +1,6 @@
 import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
-import { GLOBAL_EMISSIONS } from "./datasets/global-emissions";
 import type { GraphSizing } from "@graphysdk/core";
+import { GLOBAL_EMISSIONS } from "../datasets/global-emissions";
 
 interface GlobalEmissionsProps {
   sizing: GraphSizing;

@@ -1,5 +1,5 @@
 import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
-import { SPEND_BREAKDOWN } from "./datasets/spend-breakdown";
+import { SPEND_BREAKDOWN } from "../datasets/spend-breakdown";
 import type { GraphSizing } from "@graphysdk/core";
 
 interface SpendBreakdownProps {

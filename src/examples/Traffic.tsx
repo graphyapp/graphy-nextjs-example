@@ -1,5 +1,5 @@
 import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
-import { TRAFFIC } from "./datasets/traffic";
+import { TRAFFIC } from "../datasets/traffic";
 import type { GraphSizing } from "@graphysdk/core";
 
 interface TrafficProps {

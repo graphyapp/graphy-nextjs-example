@@ -1,7 +1,9 @@
+"use client";
+
 import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
-import { TRAFFIC } from "./examples/datasets/traffic";
+import { TRAFFIC } from "../../src/datasets/traffic";
 import type { GraphConfig } from "@graphysdk/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   GraphPanel,
   AxesPanel,
@@ -11,27 +13,52 @@ import {
   AnnotatePanel,
 } from "@graphysdk/editor";
 import { ChakraProvider, defaultSystem, Tabs } from "@chakra-ui/react";
+import { ReturnHome } from "@/src/ReturnHome";
 
-export const EditableExample = () => {
+export default function EditableExample() {
+  // Note: Currently graphySDK is not working with SSR.
+  const [isMounted, setIsMounted] = useState(false);
   const [config, setConfig] = useState<GraphConfig>(initialConfig);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <ChakraProvider value={defaultSystem}>
-      <GraphProvider
-        config={config}
-        onChange={(update: Partial<GraphConfig>) => {
-          setConfig((currentValues) => ({ ...currentValues, ...update }));
-        }}
-        theme="light"
-      >
-        <div className="flex flex-col items-center justify-center min-h-screen py-8 gap-8 mx-auto max-w-[1200px] my-8">
-          <Graph sizing={{ mode: "fixed", width: 500, height: 500 }} />
-          <Editor />
-        </div>
-      </GraphProvider>
-    </ChakraProvider>
+    <>
+      <ReturnHome />
+      <ChakraProvider value={defaultSystem}>
+        <GraphProvider
+          config={config}
+          onChange={(update) => {
+            setConfig((currentValues) => ({ ...currentValues, ...update }));
+          }}
+          theme="light"
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              paddingBlock: 50,
+              gap: 50,
+              margin: "0 auto",
+              maxWidth: 1200,
+            }}
+          >
+            <Graph sizing={{ mode: "fixed", width: 500, height: 350 }} />
+            <Editor />
+          </div>
+        </GraphProvider>
+      </ChakraProvider>
+    </>
   );
-};
+}
 
 const Editor = () => {
   return (
