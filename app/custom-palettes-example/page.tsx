@@ -102,6 +102,7 @@ const initialConfig: GraphConfig = {
     background: "LIGHT",
     borderStyle: "none",
     borderStyleName: null,
+    backgroundStyle: "transparent",
   },
   titleDocument: buildChartTitleDocument({
     title: "Headcount represents 59% of spend",

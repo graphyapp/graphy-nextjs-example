@@ -43,8 +43,7 @@ export const GlobalEmissions = ({ sizing }: GlobalEmissionsProps) => {
             series3: { color: "#E83562" },
             series4: { color: "#FED03C" },
           },
-          backgroundStyle: "solid",
-          hasTransparentBackground: false,
+          backgroundStyle: "transparent",
         },
         numberFormat: { abbreviation: "auto", decimalPlaces: "auto" },
         titleDocument: buildChartTitleDocument({
