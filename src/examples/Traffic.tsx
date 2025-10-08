@@ -53,9 +53,8 @@ export const Traffic = ({ sizing }: TrafficProps) => {
             series4: { color: "#FED03C" },
           },
           highlightStyle: "fade-color",
-          backgroundStyle: "solid",
           borderStyleName: null,
-          hasTransparentBackground: false,
+          backgroundStyle: "transparent",
         },
         numberFormat: { abbreviation: "auto", decimalPlaces: "auto" },
         titleDocument: buildChartTitleDocument({

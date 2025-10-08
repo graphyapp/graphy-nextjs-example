@@ -6,20 +6,44 @@ import {
   buildChartTitleDocument,
   CustomPaletteCatalog,
   Graph,
+  GraphConfig,
   GraphProvider,
 } from "@graphysdk/core";
+import { ColorPanel } from "@graphysdk/editor";
 import { useEffect, useState } from "react";
 
 const customPalettes: CustomPaletteCatalog = [
   {
-    id: "my-custom-palette",
-    name: "My Custom Palette",
+    id: "palette-1",
+    name: "Palette 1",
     colors: [
-      { id: "c1", hex: "#aae4fe", name: "Color name 1" },
-      { id: "c2", hex: "#aac5fe", name: "Color name 2" },
-      { id: "c3", hex: "#aeaafe", name: "Color name 3" },
-      { id: "c4", hex: "#aafeda", name: "Color name 4" },
-      { id: "c5", hex: "#aafef9", name: "Color name 5" },
+      { id: "c1", hex: "#003f5c", name: "Color name 1" },
+      { id: "c2", hex: "#58508d", name: "Color name 2" },
+      { id: "c3", hex: "#bc5090", name: "Color name 3" },
+      { id: "c4", hex: "#ff6361", name: "Color name 4" },
+      { id: "c5", hex: "#ffa600", name: "Color name 5" },
+    ],
+  },
+  {
+    id: "palette-2",
+    name: "Palette 2",
+    colors: [
+      { id: "c1", hex: "#004c6d", name: "Color name 1" },
+      { id: "c2", hex: "#346888", name: "Color name 2" },
+      { id: "c3", hex: "#5886a5", name: "Color name 3" },
+      { id: "c4", hex: "#7aa6c2", name: "Color name 4" },
+      { id: "c5", hex: "#9dc6e0", name: "Color name 5" },
+    ],
+  },
+  {
+    id: "palette-3",
+    name: "Palette 3",
+    colors: [
+      { id: "c1", hex: "#00876c", name: "Color name 1" },
+      { id: "c2", hex: "#89bd73", name: "Color name 2" },
+      { id: "c3", hex: "#ffeb8a", name: "Color name 3" },
+      { id: "c4", hex: "#f59855", name: "Color name 4" },
+      { id: "c5", hex: "#d43d51", name: "Color name 5" },
     ],
   },
 ];
@@ -27,6 +51,7 @@ const customPalettes: CustomPaletteCatalog = [
 export default function CustomPalettesExample() {
   // Note: Currently graphySDK is not working with SSR.
   const [isMounted, setIsMounted] = useState(false);
+  const [config, setConfig] = useState<GraphConfig>(initialConfig);
 
   useEffect(() => {
     setIsMounted(true);
@@ -41,31 +66,45 @@ export default function CustomPalettesExample() {
       <ReturnHome />
       <GraphProvider
         customPalettes={customPalettes}
-        config={{
-          data: SPEND_BREAKDOWN.data,
-          datasetConfig: SPEND_BREAKDOWN.config,
-          visualisationConfig: {
-            type: "pie",
-            pieAppearance: "donut",
-            legendPosition: "right",
-          },
-          customAppearanceConfig: {
-            theme: "customPalette",
-            palette: "my-custom-palette",
-            background: "LIGHT",
-            borderStyle: "none",
-            borderStyleName: null,
-          },
-          titleDocument: buildChartTitleDocument({
-            title: "Headcount represents 59% of spend",
-          }),
+        config={config}
+        onChange={(update) => {
+          setConfig((currentValues) => ({ ...currentValues, ...update }));
         }}
+        theme="light"
       >
-        <Graph
-          isEditable={false}
-          sizing={{ mode: "fixed", width: 600, height: 400 }}
-        />
+        <div className="flex p-5 max-w-6xl mx-auto">
+          <div className="flex-1">
+            <Graph
+              isEditable={false}
+              sizing={{ mode: "fixed", width: 600, height: 400 }}
+            />
+          </div>
+          <div className="flex-none w-80">
+            <ColorPanel />
+          </div>
+        </div>
       </GraphProvider>
     </>
   );
 }
+
+const initialConfig: GraphConfig = {
+  data: SPEND_BREAKDOWN.data,
+  datasetConfig: SPEND_BREAKDOWN.config,
+  visualisationConfig: {
+    type: "pie",
+    pieAppearance: "donut",
+    legendPosition: "right",
+  },
+  customAppearanceConfig: {
+    theme: "customPalette",
+    palette: "palette-1",
+    background: "LIGHT",
+    borderStyle: "none",
+    borderStyleName: null,
+    backgroundStyle: "transparent",
+  },
+  titleDocument: buildChartTitleDocument({
+    title: "Headcount represents 59% of spend",
+  }),
+};
