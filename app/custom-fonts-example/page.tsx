@@ -58,7 +58,7 @@ const initialConfig: GraphConfig = {
     borderStyle: "none",
     borderStyleName: null,
     backgroundStyle: "transparent",
-    textScale: 1.4,
+    textScale: "1.4",
     font: {
       heading: {
         fontId: "primary",
