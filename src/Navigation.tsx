@@ -12,7 +12,10 @@ export const Navigation = () => {
           <Link href="/editable-example">Editable example</Link>
         </li>
         <li>
-          <Link href="/sizing-modes">Sizing modes</Link>
+          <Link href="/sizing-modes">Sizing modes example</Link>
+        </li>
+        <li>
+          <Link href="/custom-fonts-example">Custom fonts example</Link>
         </li>
       </ul>
     </div>
