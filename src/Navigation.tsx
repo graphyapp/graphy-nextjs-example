@@ -6,16 +6,16 @@ export const Navigation = () => {
       <h2 className="text-2xl font-bold">Examples</h2>
       <ul className="flex flex-col gap-2">
         <li>
-          <Link href="/custom-palettes-example">Custom palettes example</Link>
+          <Link href="/custom-palettes">Custom palettes</Link>
         </li>
         <li>
-          <Link href="/editable-example">Editable example</Link>
+          <Link href="/editor-example">Editor example</Link>
         </li>
         <li>
-          <Link href="/sizing-modes">Sizing modes example</Link>
+          <Link href="/sizing-modes">Sizing modes</Link>
         </li>
         <li>
-          <Link href="/custom-fonts-example">Custom fonts example</Link>
+          <Link href="/custom-fonts">Custom fonts</Link>
         </li>
       </ul>
     </div>

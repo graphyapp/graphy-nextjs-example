@@ -11,11 +11,12 @@ import {
   PowerUpPanel,
   ColorPanel,
   AnnotatePanel,
+  DataTable,
 } from "@graphysdk/editor";
 import { ChakraProvider, defaultSystem, Tabs } from "@chakra-ui/react";
 import { ReturnHome } from "@/src/ReturnHome";
 
-export default function EditableExample() {
+export default function EditorExample() {
   // Note: Currently graphySDK is not working with SSR.
   const [isMounted, setIsMounted] = useState(false);
   const [config, setConfig] = useState<GraphConfig>(initialConfig);
@@ -41,18 +42,40 @@ export default function EditableExample() {
         >
           <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              paddingBlock: 50,
-              gap: 50,
+              display: "grid",
+              gridTemplateColumns: "5fr 3fr",
+              gridTemplateRows: "1fr 1fr",
+              gap: 40,
+              padding: 20,
               margin: "0 auto",
-              maxWidth: 1200,
+              maxWidth: 1400,
+              height: 900,
             }}
           >
-            <Graph sizing={{ mode: "fixed", width: 500, height: 350 }} />
-            <Editor />
+            <div
+              style={{
+                gridColumn: "1",
+                gridRow: "1",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Graph sizing={{ mode: "responsive" }} />
+            </div>
+            <div
+              style={{
+                gridColumn: "1",
+                gridRow: "2",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <DataTable />
+            </div>
+            <div style={{ gridColumn: "2", gridRow: "1 / 3" }}>
+              <Editor />
+            </div>
           </div>
         </GraphProvider>
       </ChakraProvider>
@@ -132,7 +155,6 @@ const initialConfig: GraphConfig = {
     },
     highlightStyle: "fade-color",
     borderStyleName: null,
-    backgroundStyle: "transparent",
   },
   numberFormat: { abbreviation: "auto", decimalPlaces: "auto" },
   titleDocument: buildChartTitleDocument({

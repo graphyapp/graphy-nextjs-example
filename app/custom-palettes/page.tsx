@@ -48,7 +48,7 @@ const customPalettes: CustomPaletteCatalog = [
   },
 ];
 
-export default function CustomPalettesExample() {
+export default function CustomPalettes() {
   // Note: Currently graphySDK is not working with SSR.
   const [isMounted, setIsMounted] = useState(false);
   const [config, setConfig] = useState<GraphConfig>(initialConfig);
@@ -75,7 +75,7 @@ export default function CustomPalettesExample() {
         <div className="flex p-5 max-w-6xl mx-auto">
           <div className="flex-1">
             <Graph
-              isEditable={false}
+              isEditable
               sizing={{ mode: "fixed", width: 600, height: 400 }}
             />
           </div>
