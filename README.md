@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - Node.js
-- npm (you can use any package manager, in this repo we've used npm)
+- yarn (you can use any package manager, in this repo we've used yarn)
 - npm account with access to Graphy's private packages
 
 ## Setup Instructions
@@ -33,13 +33,13 @@ To install Graphy's private packages, you'll need to authenticate with npm:
 ### 2. Install Dependencies
 
 ```bash
-npm install
+yarn
 ```
 
 ### 3. Start Development Server
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ### 4. You're Ready to Go! 🎉
