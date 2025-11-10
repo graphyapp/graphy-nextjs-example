@@ -7,6 +7,7 @@ import {
   Graph,
   GraphConfig,
   GraphProvider,
+  graphyLightTheme,
 } from "@graphysdk/core";
 import { useEffect, useState } from "react";
 
@@ -29,7 +30,7 @@ export default function CustomFonts() {
         rel="stylesheet"
       />
       <ReturnHome />
-      <GraphProvider config={config} theme="light">
+      <GraphProvider config={config} theme={graphyLightTheme}>
         <div className="flex p-5 max-w-6xl mx-auto items-center justify-center">
           <Graph isEditable={false} />
         </div>
@@ -43,7 +44,6 @@ const config: GraphConfig = {
   datasetConfig: SPEND_BREAKDOWN.config,
   visualisationConfig: {
     type: "pie",
-    pieAppearance: "donut",
     legendPosition: "right",
   },
   customAppearanceConfig: {
