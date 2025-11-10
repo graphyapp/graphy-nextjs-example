@@ -18,6 +18,25 @@ import {
   AnnotatePanel,
   DataTable,
   EditorProvider,
+  GraphTypeSection,
+  NumberFormatSection,
+  GraphOptionsSection,
+  CrossAxisSection,
+  MainAxisSection,
+  ChartBackgroundSection,
+  ChartBorderSection,
+  HighlightColorSection,
+  PaletteSection,
+  SourceSection,
+  TextSizeSection,
+  TextVisibilitySection,
+  CallOutSection,
+  HighlightSection,
+  AveragePowerUpSection,
+  GoalPowerUpSection,
+  HeadlineNumberSection,
+  LegendPositionSection,
+  TrendPowerUpSection,
 } from "@graphysdk/editor";
 import { ChakraProvider, defaultSystem, Tabs } from "@chakra-ui/react";
 import { ReturnHome } from "@/src/ReturnHome";
@@ -103,22 +122,47 @@ const Editor = () => {
         </Tabs.List>
         <Tabs.ContentGroup>
           <Tabs.Content value="graph">
-            <GraphPanel />
+            <GraphPanel>
+              <GraphTypeSection />
+              <GraphOptionsSection />
+              <LegendPositionSection />
+              <HeadlineNumberSection />
+              <NumberFormatSection />
+            </GraphPanel>
           </Tabs.Content>
           <Tabs.Content value="axes">
-            <AxesPanel />
+            <AxesPanel>
+              <MainAxisSection />
+              <CrossAxisSection />
+            </AxesPanel>
           </Tabs.Content>
           <Tabs.Content value="color">
-            <ColorPanel />
+            <ColorPanel>
+              <PaletteSection />
+              <ChartBackgroundSection />
+              <ChartBorderSection />
+              <HighlightColorSection />
+            </ColorPanel>
           </Tabs.Content>
           <Tabs.Content value="elements">
-            <ElementsPanel />
+            <ElementsPanel>
+              <TextVisibilitySection />
+              <SourceSection />
+              <TextSizeSection />
+            </ElementsPanel>
           </Tabs.Content>
           <Tabs.Content value="annotate">
-            <AnnotatePanel />
+            <AnnotatePanel>
+              <CallOutSection hiddenButtons={["text"]} />
+              <HighlightSection />
+            </AnnotatePanel>
           </Tabs.Content>
           <Tabs.Content value="powerUps">
-            <PowerUpPanel />
+            <PowerUpPanel>
+              <GoalPowerUpSection />
+              <TrendPowerUpSection />
+              <AveragePowerUpSection />
+            </PowerUpPanel>
           </Tabs.Content>
         </Tabs.ContentGroup>
       </Tabs.Root>
