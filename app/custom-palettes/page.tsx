@@ -8,8 +8,9 @@ import {
   Graph,
   GraphConfig,
   GraphProvider,
+  graphyLightTheme,
 } from "@graphysdk/core";
-import { ColorPanel } from "@graphysdk/editor";
+import { ColorPanel, EditorProvider } from "@graphysdk/editor";
 import { useEffect, useState } from "react";
 
 const customPalettes: CustomPaletteCatalog = [
@@ -70,7 +71,7 @@ export default function CustomPalettes() {
         onChange={(update) => {
           setConfig((currentValues) => ({ ...currentValues, ...update }));
         }}
-        theme="light"
+        theme={graphyLightTheme}
       >
         <div className="flex p-5 max-w-6xl mx-auto">
           <div className="flex-1">
@@ -80,7 +81,9 @@ export default function CustomPalettes() {
             />
           </div>
           <div className="flex-none w-80">
-            <ColorPanel />
+            <EditorProvider>
+              <ColorPanel />
+            </EditorProvider>
           </div>
         </div>
       </GraphProvider>
@@ -93,7 +96,6 @@ const initialConfig: GraphConfig = {
   datasetConfig: SPEND_BREAKDOWN.config,
   visualisationConfig: {
     type: "pie",
-    pieAppearance: "donut",
     legendPosition: "right",
   },
   customAppearanceConfig: {
