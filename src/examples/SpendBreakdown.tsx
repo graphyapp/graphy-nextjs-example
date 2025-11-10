@@ -1,4 +1,4 @@
-import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
+import { buildChartTitleDocument, Graph, GraphProvider, graphyLightTheme } from "@graphysdk/core";
 import { SPEND_BREAKDOWN } from "../datasets/spend-breakdown";
 import type { GraphSizing } from "@graphysdk/core";
 
@@ -9,18 +9,17 @@ interface SpendBreakdownProps {
 export const SpendBreakdown = ({ sizing }: SpendBreakdownProps) => {
   return (
     <GraphProvider
+      theme={graphyLightTheme}
       config={{
         data: SPEND_BREAKDOWN.data,
         datasetConfig: SPEND_BREAKDOWN.config,
         visualisationConfig: {
-          type: "pie",
+          type: "donut",
           locale: "EN_GB",
-          flipAxes: false,
           sortBars: false,
           curveType: "linear",
           xGoalValue: null,
           yGoalValue: null,
-          barPosition: "grouped",
           useLogScale: false,
           hasGridLines: true,
           topAxisLabel: null,
@@ -28,7 +27,6 @@ export const SpendBreakdown = ({ sizing }: SpendBreakdownProps) => {
           customPowerUp: null,
           hideCrossAxis: false,
           leftAxisLabel: null,
-          pieAppearance: "donut",
           presetPowerUp: null,
           headlineMetric: null,
           legendPosition: "top",

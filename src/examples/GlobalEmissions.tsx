@@ -1,4 +1,4 @@
-import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
+import { buildChartTitleDocument, Graph, GraphProvider, graphyLightTheme } from "@graphysdk/core";
 import type { GraphSizing } from "@graphysdk/core";
 import { GLOBAL_EMISSIONS } from "../datasets/global-emissions";
 
@@ -9,6 +9,7 @@ interface GlobalEmissionsProps {
 export const GlobalEmissions = ({ sizing }: GlobalEmissionsProps) => {
   return (
     <GraphProvider
+      theme={graphyLightTheme}
       config={{
         data: GLOBAL_EMISSIONS.data,
         datasetConfig: GLOBAL_EMISSIONS.config,

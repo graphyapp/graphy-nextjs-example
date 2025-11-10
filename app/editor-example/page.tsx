@@ -1,6 +1,11 @@
 "use client";
 
-import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
+import {
+  buildChartTitleDocument,
+  Graph,
+  GraphProvider,
+  graphyLightTheme,
+} from "@graphysdk/core";
 import { TRAFFIC } from "../../src/datasets/traffic";
 import type { GraphConfig } from "@graphysdk/core";
 import { useEffect, useState } from "react";
@@ -12,6 +17,7 @@ import {
   ColorPanel,
   AnnotatePanel,
   DataTable,
+  EditorProvider,
 } from "@graphysdk/editor";
 import { ChakraProvider, defaultSystem, Tabs } from "@chakra-ui/react";
 import { ReturnHome } from "@/src/ReturnHome";
@@ -38,7 +44,7 @@ export default function EditorExample() {
           onChange={(update) => {
             setConfig((currentValues) => ({ ...currentValues, ...update }));
           }}
-          theme="light"
+          theme={graphyLightTheme}
         >
           <div
             style={{
@@ -85,36 +91,38 @@ export default function EditorExample() {
 
 const Editor = () => {
   return (
-    <Tabs.Root defaultValue="graph">
-      <Tabs.List>
-        <Tabs.Trigger value="graph">Graph</Tabs.Trigger>
-        <Tabs.Trigger value="axes">Axes</Tabs.Trigger>
-        <Tabs.Trigger value="color">Color</Tabs.Trigger>
-        <Tabs.Trigger value="elements">Elements</Tabs.Trigger>
-        <Tabs.Trigger value="annotate">Annotate</Tabs.Trigger>
-        <Tabs.Trigger value="powerUps">Power-ups</Tabs.Trigger>
-      </Tabs.List>
-      <Tabs.ContentGroup>
-        <Tabs.Content value="graph">
-          <GraphPanel />
-        </Tabs.Content>
-        <Tabs.Content value="axes">
-          <AxesPanel />
-        </Tabs.Content>
-        <Tabs.Content value="color">
-          <ColorPanel />
-        </Tabs.Content>
-        <Tabs.Content value="elements">
-          <ElementsPanel />
-        </Tabs.Content>
-        <Tabs.Content value="annotate">
-          <AnnotatePanel />
-        </Tabs.Content>
-        <Tabs.Content value="powerUps">
-          <PowerUpPanel />
-        </Tabs.Content>
-      </Tabs.ContentGroup>
-    </Tabs.Root>
+    <EditorProvider>
+      <Tabs.Root defaultValue="graph">
+        <Tabs.List>
+          <Tabs.Trigger value="graph">Graph</Tabs.Trigger>
+          <Tabs.Trigger value="axes">Axes</Tabs.Trigger>
+          <Tabs.Trigger value="color">Color</Tabs.Trigger>
+          <Tabs.Trigger value="elements">Elements</Tabs.Trigger>
+          <Tabs.Trigger value="annotate">Annotate</Tabs.Trigger>
+          <Tabs.Trigger value="powerUps">Power-ups</Tabs.Trigger>
+        </Tabs.List>
+        <Tabs.ContentGroup>
+          <Tabs.Content value="graph">
+            <GraphPanel />
+          </Tabs.Content>
+          <Tabs.Content value="axes">
+            <AxesPanel />
+          </Tabs.Content>
+          <Tabs.Content value="color">
+            <ColorPanel />
+          </Tabs.Content>
+          <Tabs.Content value="elements">
+            <ElementsPanel />
+          </Tabs.Content>
+          <Tabs.Content value="annotate">
+            <AnnotatePanel />
+          </Tabs.Content>
+          <Tabs.Content value="powerUps">
+            <PowerUpPanel />
+          </Tabs.Content>
+        </Tabs.ContentGroup>
+      </Tabs.Root>
+    </EditorProvider>
   );
 };
 
@@ -122,8 +130,7 @@ const initialConfig: GraphConfig = {
   data: TRAFFIC.data,
   datasetConfig: TRAFFIC.config,
   visualisationConfig: {
-    type: "line",
-    barPosition: "stacked",
+    type: "areaStacked",
     locale: "EN_US",
     curveType: "linear",
     useLogScale: false,

@@ -17,6 +17,9 @@ export const Navigation = () => {
         <li>
           <Link href="/custom-fonts">Custom fonts</Link>
         </li>
+        <li>
+          <Link href="/custom-borders">Custom borders</Link>
+        </li>
       </ul>
     </div>
   );
