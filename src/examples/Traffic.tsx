@@ -1,4 +1,4 @@
-import { buildChartTitleDocument, Graph, GraphProvider } from "@graphysdk/core";
+import { buildChartTitleDocument, Graph, GraphProvider, graphyLightTheme } from "@graphysdk/core";
 import { TRAFFIC } from "../datasets/traffic";
 import type { GraphSizing } from "@graphysdk/core";
 
@@ -9,6 +9,7 @@ interface TrafficProps {
 export const Traffic = ({ sizing }: TrafficProps) => {
   return (
     <GraphProvider
+      theme={graphyLightTheme}
       config={{
         data: TRAFFIC.data,
         datasetConfig: TRAFFIC.config,
@@ -21,8 +22,7 @@ export const Traffic = ({ sizing }: TrafficProps) => {
           },
         ],
         visualisationConfig: {
-          type: "line",
-          barPosition: "stacked",
+          type: "areaStacked",
           locale: "EN_US",
           curveType: "linear",
           useLogScale: false,
