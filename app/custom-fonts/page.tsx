@@ -49,7 +49,6 @@ const config: GraphConfig = {
   customAppearanceConfig: {
     theme: "graphy",
     palette: "graphy",
-    background: "LIGHT",
     borderStyle: "none",
     borderStyleName: null,
     backgroundStyle: "transparent",
