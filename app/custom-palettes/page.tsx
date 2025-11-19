@@ -96,12 +96,11 @@ const initialConfig: GraphConfig = {
   datasetConfig: SPEND_BREAKDOWN.config,
   visualisationConfig: {
     type: "pie",
-    legendPosition: "right",
+    legendPosition: "top",
   },
   customAppearanceConfig: {
     theme: "customPalette",
     palette: "palette-1",
-    background: "LIGHT",
     borderStyle: "none",
     borderStyleName: null,
     backgroundStyle: "transparent",

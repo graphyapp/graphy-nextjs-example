@@ -1,4 +1,9 @@
-import { buildChartTitleDocument, Graph, GraphProvider, graphyLightTheme } from "@graphysdk/core";
+import {
+  buildChartTitleDocument,
+  Graph,
+  GraphProvider,
+  graphyLightTheme,
+} from "@graphysdk/core";
 import { SPEND_BREAKDOWN } from "../datasets/spend-breakdown";
 import type { GraphSizing } from "@graphysdk/core";
 
@@ -49,7 +54,6 @@ export const SpendBreakdown = ({ sizing }: SpendBreakdownProps) => {
           theme: "custom",
           palette: null,
           textScale: "1",
-          background: "LIGHT",
           borderStyle: "none",
           seriesConfig: {
             series1: { color: "#3C82F6", lineType: "solid" },

@@ -196,7 +196,6 @@ const initialConfig: GraphConfig = {
     theme: "custom",
     palette: null,
     textScale: "1",
-    background: "LIGHT",
     borderStyle: "none",
     seriesConfig: {
       series1: { color: "#FCA65F", fillType: "solid", lineType: "solid" },

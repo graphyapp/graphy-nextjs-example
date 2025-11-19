@@ -1,9 +1,15 @@
 "use client";
 
-import {SPEND_BREAKDOWN} from "@/src/datasets/spend-breakdown";
-import {ReturnHome} from "@/src/ReturnHome";
-import {buildChartTitleDocument, Graph, GraphConfig, GraphProvider, graphyLightTheme,} from "@graphysdk/core";
-import {useEffect, useState} from "react";
+import { SPEND_BREAKDOWN } from "@/src/datasets/spend-breakdown";
+import { ReturnHome } from "@/src/ReturnHome";
+import {
+  buildChartTitleDocument,
+  Graph,
+  GraphConfig,
+  GraphProvider,
+  graphyLightTheme,
+} from "@graphysdk/core";
+import { useEffect, useState } from "react";
 
 export default function CustomFontsExample() {
   // Note: Currently graphySDK is not working with SSR.
@@ -19,18 +25,19 @@ export default function CustomFontsExample() {
 
   return (
     <>
-      <ReturnHome/>
-      <ul className={'w-full flex flex-col gap-8 items-center justify-center mb-10'}>
-        {configs.map((config, index) =>
+      <ReturnHome />
+      <ul
+        className={
+          "w-full flex flex-col gap-8 items-center justify-center mb-10"
+        }
+      >
+        {configs.map((config, index) => (
           <li key={index}>
-            <GraphProvider
-              config={config}
-              theme={graphyLightTheme}
-            >
-              <Graph isEditable={false}/>
+            <GraphProvider config={config} theme={graphyLightTheme}>
+              <Graph isEditable={false} />
             </GraphProvider>
           </li>
-        )}
+        ))}
       </ul>
     </>
   );
@@ -45,7 +52,6 @@ const noneConfig: GraphConfig = {
   customAppearanceConfig: {
     theme: "graphy",
     palette: "graphy",
-    background: "LIGHT",
     borderStroke: 0,
     backgroundStyle: "transparent",
     textScale: "1.4",
@@ -64,9 +70,8 @@ const simpleConfig: GraphConfig = {
   customAppearanceConfig: {
     theme: "graphy",
     palette: "graphy",
-    background: "LIGHT",
     borderStroke: 1,
-    borderType: 'grey',
+    borderType: "grey",
     backgroundStyle: "transparent",
     textScale: "1.4",
   },
@@ -84,10 +89,9 @@ const customConfig: GraphConfig = {
   customAppearanceConfig: {
     theme: "graphy",
     palette: "graphy",
-    background: "LIGHT",
     borderStroke: 12,
-    borderType: 'custom',
-    borderColor: '#F0A2C1',
+    borderType: "custom",
+    borderColor: "#F0A2C1",
     backgroundStyle: "transparent",
     textScale: "1.4",
   },
@@ -105,10 +109,9 @@ const solidConfig: GraphConfig = {
   customAppearanceConfig: {
     theme: "graphy",
     palette: "graphy",
-    background: "LIGHT",
     borderStroke: 12,
-    borderType: 'solid',
-    borderColor: '#F0A2C1',
+    borderType: "solid",
+    borderColor: "#F0A2C1",
     backgroundStyle: "transparent",
     textScale: "1.4",
   },
@@ -126,10 +129,9 @@ const gradientConfig: GraphConfig = {
   customAppearanceConfig: {
     theme: "graphy",
     palette: "graphy",
-    background: "LIGHT",
     borderStroke: 12,
-    borderType: 'gradient',
-    borderColor: '#F0A2C1',
+    borderType: "gradient",
+    borderColor: "#F0A2C1",
     backgroundStyle: "transparent",
     textScale: "1.4",
   },
@@ -147,10 +149,9 @@ const presetConfig: GraphConfig = {
   customAppearanceConfig: {
     theme: "graphy",
     palette: "graphy",
-    background: "LIGHT",
     borderStroke: 12,
-    borderType: 'preset',
-    borderColor: 'ice_cream',
+    borderType: "preset",
+    borderColor: "ice_cream",
     backgroundStyle: "transparent",
     textScale: "1.4",
   },
@@ -160,5 +161,10 @@ const presetConfig: GraphConfig = {
 };
 
 const configs: GraphConfig[] = [
-  noneConfig, simpleConfig, customConfig, solidConfig, gradientConfig, presetConfig
-]
+  noneConfig,
+  simpleConfig,
+  customConfig,
+  solidConfig,
+  gradientConfig,
+  presetConfig,
+];

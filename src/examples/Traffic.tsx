@@ -1,4 +1,9 @@
-import { buildChartTitleDocument, Graph, GraphProvider, graphyLightTheme } from "@graphysdk/core";
+import {
+  buildChartTitleDocument,
+  Graph,
+  GraphProvider,
+  graphyLightTheme,
+} from "@graphysdk/core";
 import { TRAFFIC } from "../datasets/traffic";
 import type { GraphSizing } from "@graphysdk/core";
 
@@ -44,7 +49,6 @@ export const Traffic = ({ sizing }: TrafficProps) => {
           theme: "custom",
           palette: null,
           textScale: "1",
-          background: "LIGHT",
           borderStyle: "none",
           seriesConfig: {
             series1: { color: "#FCA65F", fillType: "solid", lineType: "solid" },
