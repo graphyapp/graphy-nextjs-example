@@ -9,6 +9,7 @@ import {
   GraphConfig,
   GraphProvider,
   graphyLightTheme,
+  migrateFromLegacyGraphConfig,
 } from "@graphysdk/core";
 import { ColorPanel, EditorProvider } from "@graphysdk/editor";
 import { useEffect, useState } from "react";
@@ -91,21 +92,23 @@ export default function CustomPalettes() {
   );
 }
 
-const initialConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "pie",
-    legendPosition: "top",
+const initialConfig: GraphConfig = migrateFromLegacyGraphConfig({
+  config: {
+    data: SPEND_BREAKDOWN.data,
+    datasetConfig: SPEND_BREAKDOWN.config,
+    visualisationConfig: {
+      type: "pie",
+      legendPosition: "top",
+    },
+    customAppearanceConfig: {
+      theme: "customPalette",
+      palette: "palette-1",
+      borderStyle: "none",
+      borderStyleName: null,
+      // backgroundStyle: "transparent",
+    },
+    titleDocument: buildChartTitleDocument({
+      title: "Headcount represents 59% of spend",
+    }),
   },
-  customAppearanceConfig: {
-    theme: "customPalette",
-    palette: "palette-1",
-    borderStyle: "none",
-    borderStyleName: null,
-    backgroundStyle: "transparent",
-  },
-  titleDocument: buildChartTitleDocument({
-    title: "Headcount represents 59% of spend",
-  }),
-};
+}).config;

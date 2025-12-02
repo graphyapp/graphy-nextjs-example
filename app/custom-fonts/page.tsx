@@ -8,6 +8,7 @@ import {
   GraphConfig,
   GraphProvider,
   graphyLightTheme,
+  migrateFromLegacyGraphConfig,
 } from "@graphysdk/core";
 import { useEffect, useState } from "react";
 
@@ -39,45 +40,47 @@ export default function CustomFonts() {
   );
 }
 
-const config: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "pie",
-    legendPosition: "right",
-  },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStyle: "none",
-    borderStyleName: null,
-    backgroundStyle: "transparent",
-    textScale: "1",
-    font: {
-      heading: {
-        fontId: "primary",
-        color: "#1f57d3",
+const config: GraphConfig = migrateFromLegacyGraphConfig({
+  config: {
+    data: SPEND_BREAKDOWN.data,
+    datasetConfig: SPEND_BREAKDOWN.config,
+    visualisationConfig: {
+      type: "pie",
+      legendPosition: "right",
+    },
+    customAppearanceConfig: {
+      theme: "graphy",
+      palette: "graphy",
+      borderStyle: "none",
+      borderStyleName: null,
+      // backgroundStyle: "transparent",
+      textScale: "1",
+      font: {
+        heading: {
+          fontId: "primary",
+          color: "#1f57d3",
+        },
+        body: {
+          fontId: "secondary",
+          color: "#3a94ed",
+        },
       },
-      body: {
-        fontId: "secondary",
-        color: "#3a94ed",
+    },
+    titleDocument: buildChartTitleDocument({
+      title: "Custom font families and colors",
+    }),
+    fontList: [
+      {
+        id: "primary",
+        label: "Heading",
+        fontFamily: "'Nova Square', 'Georgia', 'Times New Roman', serif", // LOADED FROM GOOGLE FONTS
       },
-    },
+      {
+        id: "secondary",
+        label: "Body",
+        fontFamily:
+          "'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Comic Neue', cursive", // SYSTEM FONTS
+      },
+    ],
   },
-  titleDocument: buildChartTitleDocument({
-    title: "Custom font families and colors",
-  }),
-  fontList: [
-    {
-      id: "primary",
-      label: "Heading",
-      fontFamily: "'Nova Square', 'Georgia', 'Times New Roman', serif", // LOADED FROM GOOGLE FONTS
-    },
-    {
-      id: "secondary",
-      label: "Body",
-      fontFamily:
-        "'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Comic Neue', cursive", // SYSTEM FONTS
-    },
-  ],
-};
+}).config;

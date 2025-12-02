@@ -5,6 +5,7 @@ import {
   Graph,
   GraphProvider,
   graphyLightTheme,
+  migrateFromLegacyGraphConfig,
 } from "@graphysdk/core";
 import { TRAFFIC } from "../../src/datasets/traffic";
 import type { GraphConfig } from "@graphysdk/core";
@@ -170,44 +171,46 @@ const Editor = () => {
   );
 };
 
-const initialConfig: GraphConfig = {
-  data: TRAFFIC.data,
-  datasetConfig: TRAFFIC.config,
-  visualisationConfig: {
-    type: "areaStacked",
-    locale: "EN_US",
-    curveType: "linear",
-    useLogScale: false,
-    hasGridLines: true,
-    topAxisLabel: null,
-    hideCrossAxis: false,
-    leftAxisLabel: null,
-    lineThickness: 1.56,
-    headlineMetric: null,
-    legendPosition: "right",
-    rightAxisLabel: "Traffic",
-    showDataLabels: false,
-    bottomAxisLabel: null,
-    shouldStartFromZero: true,
-    showPercentageLabels: false,
-    reverseCrossAxisPosition: false,
-  },
-  customAppearanceConfig: {
-    theme: "custom",
-    palette: null,
-    textScale: "1",
-    borderStyle: "none",
-    seriesConfig: {
-      series1: { color: "#FCA65F", fillType: "solid", lineType: "solid" },
-      series2: { color: "#FAC491", lineType: "solid" },
-      series3: { color: "#BABABA", lineType: "solid" },
-      series4: { color: "#FED03C" },
+const initialConfig: GraphConfig = migrateFromLegacyGraphConfig({
+  config: {
+    data: TRAFFIC.data,
+    datasetConfig: TRAFFIC.config,
+    visualisationConfig: {
+      type: "areaStacked",
+      locale: "EN_US",
+      curveType: "linear",
+      useLogScale: false,
+      hasGridLines: true,
+      topAxisLabel: null,
+      hideCrossAxis: false,
+      leftAxisLabel: null,
+      lineThickness: 1.56,
+      headlineMetric: null,
+      legendPosition: "right",
+      rightAxisLabel: "Traffic",
+      showDataLabels: false,
+      bottomAxisLabel: null,
+      shouldStartFromZero: true,
+      showPercentageLabels: false,
+      reverseCrossAxisPosition: false,
     },
-    highlightStyle: "fade-color",
-    borderStyleName: null,
+    customAppearanceConfig: {
+      theme: "custom",
+      palette: null,
+      textScale: "1",
+      borderStyle: "none",
+      seriesConfig: {
+        series1: { color: "#FCA65F", fillType: "solid", lineType: "solid" },
+        series2: { color: "#FAC491", lineType: "solid" },
+        series3: { color: "#BABABA", lineType: "solid" },
+        series4: { color: "#FED03C" },
+      },
+      highlightStyle: "fade-color",
+      borderStyleName: null,
+    },
+    numberFormat: { abbreviation: "auto", decimalPlaces: "auto" },
+    titleDocument: buildChartTitleDocument({
+      title: "73% increase in organic traffic in April",
+    }),
   },
-  numberFormat: { abbreviation: "auto", decimalPlaces: "auto" },
-  titleDocument: buildChartTitleDocument({
-    title: "73% increase in organic traffic in April",
-  }),
-};
+}).config;

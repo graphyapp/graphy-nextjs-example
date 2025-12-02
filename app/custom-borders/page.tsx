@@ -8,7 +8,9 @@ import {
   GraphConfig,
   GraphProvider,
   graphyLightTheme,
+  migrateFromLegacyGraphConfig,
 } from "@graphysdk/core";
+
 import { useEffect, useState } from "react";
 
 export default function CustomFontsExample() {
@@ -43,122 +45,134 @@ export default function CustomFontsExample() {
   );
 }
 
-const noneConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+const noneConfig: GraphConfig = migrateFromLegacyGraphConfig({
+  config: {
+    data: SPEND_BREAKDOWN.data,
+    datasetConfig: SPEND_BREAKDOWN.config,
+    visualisationConfig: {
+      type: "bar",
+    },
+    customAppearanceConfig: {
+      theme: "graphy",
+      palette: "graphy",
+      borderStroke: 0,
+      // backgroundStyle: "transparent",
+      textScale: "1.4",
+    },
+    titleDocument: buildChartTitleDocument({
+      title: "No border",
+    }),
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 0,
-    backgroundStyle: "transparent",
-    textScale: "1.4",
-  },
-  titleDocument: buildChartTitleDocument({
-    title: "No border",
-  }),
-};
+}).config;
 
-const simpleConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+const simpleConfig: GraphConfig = migrateFromLegacyGraphConfig({
+  config: {
+    data: SPEND_BREAKDOWN.data,
+    datasetConfig: SPEND_BREAKDOWN.config,
+    visualisationConfig: {
+      type: "bar",
+    },
+    customAppearanceConfig: {
+      theme: "graphy",
+      palette: "graphy",
+      borderStroke: 1,
+      borderType: "grey",
+      // backgroundStyle: "transparent",
+      textScale: "1.4",
+    },
+    titleDocument: buildChartTitleDocument({
+      title: "Simple border",
+    }),
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 1,
-    borderType: "grey",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
-  },
-  titleDocument: buildChartTitleDocument({
-    title: "Simple border",
-  }),
-};
+}).config;
 
-const customConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+const customConfig: GraphConfig = migrateFromLegacyGraphConfig({
+  config: {
+    data: SPEND_BREAKDOWN.data,
+    datasetConfig: SPEND_BREAKDOWN.config,
+    visualisationConfig: {
+      type: "bar",
+    },
+    customAppearanceConfig: {
+      theme: "graphy",
+      palette: "graphy",
+      borderStroke: 12,
+      borderType: "custom",
+      borderColor: "#F0A2C1",
+      // backgroundStyle: "transparent",
+      textScale: "1.4",
+    },
+    titleDocument: buildChartTitleDocument({
+      title: "Custom border",
+    }),
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 12,
-    borderType: "custom",
-    borderColor: "#F0A2C1",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
-  },
-  titleDocument: buildChartTitleDocument({
-    title: "Custom border",
-  }),
-};
+}).config;
 
-const solidConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+const solidConfig: GraphConfig = migrateFromLegacyGraphConfig({
+  config: {
+    data: SPEND_BREAKDOWN.data,
+    datasetConfig: SPEND_BREAKDOWN.config,
+    visualisationConfig: {
+      type: "bar",
+    },
+    customAppearanceConfig: {
+      theme: "graphy",
+      palette: "graphy",
+      borderStroke: 12,
+      borderType: "solid",
+      borderColor: "#F0A2C1",
+      // backgroundStyle: "transparent",
+      textScale: "1.4",
+    },
+    titleDocument: buildChartTitleDocument({
+      title: "Solid border",
+    }),
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 12,
-    borderType: "solid",
-    borderColor: "#F0A2C1",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
-  },
-  titleDocument: buildChartTitleDocument({
-    title: "Solid border",
-  }),
-};
+}).config;
 
-const gradientConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+const gradientConfig: GraphConfig = migrateFromLegacyGraphConfig({
+  config: {
+    data: SPEND_BREAKDOWN.data,
+    datasetConfig: SPEND_BREAKDOWN.config,
+    visualisationConfig: {
+      type: "bar",
+    },
+    customAppearanceConfig: {
+      theme: "graphy",
+      palette: "graphy",
+      borderStroke: 12,
+      borderType: "gradient",
+      borderColor: "#F0A2C1",
+      // backgroundStyle: "transparent",
+      textScale: "1.4",
+    },
+    titleDocument: buildChartTitleDocument({
+      title: "Gradient border",
+    }),
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 12,
-    borderType: "gradient",
-    borderColor: "#F0A2C1",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
-  },
-  titleDocument: buildChartTitleDocument({
-    title: "Gradient border",
-  }),
-};
+}).config;
 
-const presetConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+const presetConfig: GraphConfig = migrateFromLegacyGraphConfig({
+  config: {
+    data: SPEND_BREAKDOWN.data,
+    datasetConfig: SPEND_BREAKDOWN.config,
+    visualisationConfig: {
+      type: "bar",
+    },
+    customAppearanceConfig: {
+      theme: "graphy",
+      palette: "graphy",
+      borderStroke: 12,
+      borderType: "preset",
+      borderColor: "ice_cream",
+      // backgroundStyle: "transparent",
+      textScale: "1.4",
+    },
+    titleDocument: buildChartTitleDocument({
+      title: "Preset border",
+    }),
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 12,
-    borderType: "preset",
-    borderColor: "ice_cream",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
-  },
-  titleDocument: buildChartTitleDocument({
-    title: "Preset border",
-  }),
-};
+}).config;
 
 const configs: GraphConfig[] = [
   noneConfig,
