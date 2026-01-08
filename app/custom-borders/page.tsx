@@ -1,9 +1,7 @@
 "use client";
 
-import { SPEND_BREAKDOWN } from "@/src/datasets/spend-breakdown";
 import { ReturnHome } from "@/src/ReturnHome";
 import {
-  buildChartTitleDocument,
   Graph,
   GraphConfig,
   GraphProvider,
@@ -44,120 +42,606 @@ export default function CustomFontsExample() {
 }
 
 const noneConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+  type: "bar",
+  data: {
+    columns: [
+      {
+        key: "c1",
+        label: "Category",
+      },
+      {
+        key: "c2",
+        label: "Value",
+      },
+    ],
+    rows: [
+      {
+        c1: "Headcount",
+        c2: "$38,4560",
+      },
+      {
+        c1: "Legal",
+        c2: "$4,5780",
+      },
+      {
+        c1: "Marketing",
+        c2: "$9,4560",
+      },
+      {
+        c1: "Office",
+        c2: "$12,9850",
+      },
+    ],
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 0,
-    backgroundStyle: "transparent",
-    textScale: "1.4",
+  appearance: {
+    palette: {
+      id: "preset:graphy:graphy",
+      name: "Graphy",
+      colors: [
+        {
+          id: "0",
+          hex: "#B399FD",
+          name: "Color 1",
+        },
+        {
+          id: "1",
+          hex: "#FC8497",
+          name: "Color 2",
+        },
+        {
+          id: "2",
+          hex: "#FBBC30",
+          name: "Color 3",
+        },
+        {
+          id: "3",
+          hex: "#279EFF",
+          name: "Color 4",
+        },
+        {
+          id: "4",
+          hex: "#E83562",
+          name: "Color 5",
+        },
+        {
+          id: "5",
+          hex: "#40F8FF",
+          name: "Color 6",
+        },
+        {
+          id: "6",
+          hex: "#F38650",
+          name: "Color 7",
+        },
+        {
+          id: "7",
+          hex: "#C82184",
+          name: "Color 8",
+        },
+        {
+          id: "8",
+          hex: "#31FCB4",
+          name: "Color 9",
+        },
+        {
+          id: "9",
+          hex: "#6D48D2",
+          name: "Color 10",
+        },
+      ],
+    },
+    border: {
+      width: 0,
+    },
+    textScale: 1.4,
   },
-  titleDocument: buildChartTitleDocument({
+  content: {
     title: "No border",
-  }),
+  },
 };
 
 const simpleConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+  type: "bar",
+  data: {
+    columns: [
+      {
+        key: "c1",
+        label: "Category",
+      },
+      {
+        key: "c2",
+        label: "Value",
+      },
+    ],
+    rows: [
+      {
+        c1: "Headcount",
+        c2: "$38,4560",
+      },
+      {
+        c1: "Legal",
+        c2: "$4,5780",
+      },
+      {
+        c1: "Marketing",
+        c2: "$9,4560",
+      },
+      {
+        c1: "Office",
+        c2: "$12,9850",
+      },
+    ],
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 1,
-    borderType: "grey",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
+  appearance: {
+    palette: {
+      id: "preset:graphy:graphy",
+      name: "Graphy",
+      colors: [
+        {
+          id: "0",
+          hex: "#B399FD",
+          name: "Color 1",
+        },
+        {
+          id: "1",
+          hex: "#FC8497",
+          name: "Color 2",
+        },
+        {
+          id: "2",
+          hex: "#FBBC30",
+          name: "Color 3",
+        },
+        {
+          id: "3",
+          hex: "#279EFF",
+          name: "Color 4",
+        },
+        {
+          id: "4",
+          hex: "#E83562",
+          name: "Color 5",
+        },
+        {
+          id: "5",
+          hex: "#40F8FF",
+          name: "Color 6",
+        },
+        {
+          id: "6",
+          hex: "#F38650",
+          name: "Color 7",
+        },
+        {
+          id: "7",
+          hex: "#C82184",
+          name: "Color 8",
+        },
+        {
+          id: "8",
+          hex: "#31FCB4",
+          name: "Color 9",
+        },
+        {
+          id: "9",
+          hex: "#6D48D2",
+          name: "Color 10",
+        },
+      ],
+    },
+    border: {
+      style: "grey",
+      width: 1,
+    },
+    textScale: 1.4,
   },
-  titleDocument: buildChartTitleDocument({
+  content: {
     title: "Simple border",
-  }),
+  },
 };
 
 const customConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+  type: "bar",
+  data: {
+    columns: [
+      {
+        key: "c1",
+        label: "Category",
+      },
+      {
+        key: "c2",
+        label: "Value",
+      },
+    ],
+    rows: [
+      {
+        c1: "Headcount",
+        c2: "$38,4560",
+      },
+      {
+        c1: "Legal",
+        c2: "$4,5780",
+      },
+      {
+        c1: "Marketing",
+        c2: "$9,4560",
+      },
+      {
+        c1: "Office",
+        c2: "$12,9850",
+      },
+    ],
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 12,
-    borderType: "custom",
-    borderColor: "#F0A2C1",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
+  appearance: {
+    palette: {
+      id: "preset:graphy:graphy",
+      name: "Graphy",
+      colors: [
+        {
+          id: "0",
+          hex: "#B399FD",
+          name: "Color 1",
+        },
+        {
+          id: "1",
+          hex: "#FC8497",
+          name: "Color 2",
+        },
+        {
+          id: "2",
+          hex: "#FBBC30",
+          name: "Color 3",
+        },
+        {
+          id: "3",
+          hex: "#279EFF",
+          name: "Color 4",
+        },
+        {
+          id: "4",
+          hex: "#E83562",
+          name: "Color 5",
+        },
+        {
+          id: "5",
+          hex: "#40F8FF",
+          name: "Color 6",
+        },
+        {
+          id: "6",
+          hex: "#F38650",
+          name: "Color 7",
+        },
+        {
+          id: "7",
+          hex: "#C82184",
+          name: "Color 8",
+        },
+        {
+          id: "8",
+          hex: "#31FCB4",
+          name: "Color 9",
+        },
+        {
+          id: "9",
+          hex: "#6D48D2",
+          name: "Color 10",
+        },
+      ],
+    },
+    border: {
+      style: "custom",
+      width: 12,
+      color: "#F0A2C1",
+    },
+    textScale: 1.4,
   },
-  titleDocument: buildChartTitleDocument({
+  content: {
     title: "Custom border",
-  }),
+  },
 };
 
 const solidConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+  type: "bar",
+  data: {
+    columns: [
+      {
+        key: "c1",
+        label: "Category",
+      },
+      {
+        key: "c2",
+        label: "Value",
+      },
+    ],
+    rows: [
+      {
+        c1: "Headcount",
+        c2: "$38,4560",
+      },
+      {
+        c1: "Legal",
+        c2: "$4,5780",
+      },
+      {
+        c1: "Marketing",
+        c2: "$9,4560",
+      },
+      {
+        c1: "Office",
+        c2: "$12,9850",
+      },
+    ],
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 12,
-    borderType: "solid",
-    borderColor: "#F0A2C1",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
+  appearance: {
+    palette: {
+      id: "preset:graphy:graphy",
+      name: "Graphy",
+      colors: [
+        {
+          id: "0",
+          hex: "#B399FD",
+          name: "Color 1",
+        },
+        {
+          id: "1",
+          hex: "#FC8497",
+          name: "Color 2",
+        },
+        {
+          id: "2",
+          hex: "#FBBC30",
+          name: "Color 3",
+        },
+        {
+          id: "3",
+          hex: "#279EFF",
+          name: "Color 4",
+        },
+        {
+          id: "4",
+          hex: "#E83562",
+          name: "Color 5",
+        },
+        {
+          id: "5",
+          hex: "#40F8FF",
+          name: "Color 6",
+        },
+        {
+          id: "6",
+          hex: "#F38650",
+          name: "Color 7",
+        },
+        {
+          id: "7",
+          hex: "#C82184",
+          name: "Color 8",
+        },
+        {
+          id: "8",
+          hex: "#31FCB4",
+          name: "Color 9",
+        },
+        {
+          id: "9",
+          hex: "#6D48D2",
+          name: "Color 10",
+        },
+      ],
+    },
+    border: {
+      style: "tinted",
+      width: 12,
+      color: "#F0A2C1",
+    },
+    textScale: 1.4,
   },
-  titleDocument: buildChartTitleDocument({
+  content: {
     title: "Solid border",
-  }),
+  },
 };
 
 const gradientConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+  type: "bar",
+  data: {
+    columns: [
+      {
+        key: "c1",
+        label: "Category",
+      },
+      {
+        key: "c2",
+        label: "Value",
+      },
+    ],
+    rows: [
+      {
+        c1: "Headcount",
+        c2: "$38,4560",
+      },
+      {
+        c1: "Legal",
+        c2: "$4,5780",
+      },
+      {
+        c1: "Marketing",
+        c2: "$9,4560",
+      },
+      {
+        c1: "Office",
+        c2: "$12,9850",
+      },
+    ],
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 12,
-    borderType: "gradient",
-    borderColor: "#F0A2C1",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
+  appearance: {
+    palette: {
+      id: "preset:graphy:graphy",
+      name: "Graphy",
+      colors: [
+        {
+          id: "0",
+          hex: "#B399FD",
+          name: "Color 1",
+        },
+        {
+          id: "1",
+          hex: "#FC8497",
+          name: "Color 2",
+        },
+        {
+          id: "2",
+          hex: "#FBBC30",
+          name: "Color 3",
+        },
+        {
+          id: "3",
+          hex: "#279EFF",
+          name: "Color 4",
+        },
+        {
+          id: "4",
+          hex: "#E83562",
+          name: "Color 5",
+        },
+        {
+          id: "5",
+          hex: "#40F8FF",
+          name: "Color 6",
+        },
+        {
+          id: "6",
+          hex: "#F38650",
+          name: "Color 7",
+        },
+        {
+          id: "7",
+          hex: "#C82184",
+          name: "Color 8",
+        },
+        {
+          id: "8",
+          hex: "#31FCB4",
+          name: "Color 9",
+        },
+        {
+          id: "9",
+          hex: "#6D48D2",
+          name: "Color 10",
+        },
+      ],
+    },
+    border: {
+      style: "gradient",
+      width: 12,
+      color: "#F0A2C1",
+    },
+    textScale: 1.4,
   },
-  titleDocument: buildChartTitleDocument({
+  content: {
     title: "Gradient border",
-  }),
+  },
 };
 
 const presetConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "bar",
+  type: "bar",
+  data: {
+    columns: [
+      {
+        key: "c1",
+        label: "Category",
+      },
+      {
+        key: "c2",
+        label: "Value",
+      },
+    ],
+    rows: [
+      {
+        c1: "Headcount",
+        c2: "$38,4560",
+      },
+      {
+        c1: "Legal",
+        c2: "$4,5780",
+      },
+      {
+        c1: "Marketing",
+        c2: "$9,4560",
+      },
+      {
+        c1: "Office",
+        c2: "$12,9850",
+      },
+    ],
   },
-  customAppearanceConfig: {
-    theme: "graphy",
-    palette: "graphy",
-    borderStroke: 12,
-    borderType: "preset",
-    borderColor: "ice_cream",
-    backgroundStyle: "transparent",
-    textScale: "1.4",
+  appearance: {
+    palette: {
+      id: "preset:graphy:graphy",
+      name: "Graphy",
+      colors: [
+        {
+          id: "0",
+          hex: "#B399FD",
+          name: "Color 1",
+        },
+        {
+          id: "1",
+          hex: "#FC8497",
+          name: "Color 2",
+        },
+        {
+          id: "2",
+          hex: "#FBBC30",
+          name: "Color 3",
+        },
+        {
+          id: "3",
+          hex: "#279EFF",
+          name: "Color 4",
+        },
+        {
+          id: "4",
+          hex: "#E83562",
+          name: "Color 5",
+        },
+        {
+          id: "5",
+          hex: "#40F8FF",
+          name: "Color 6",
+        },
+        {
+          id: "6",
+          hex: "#F38650",
+          name: "Color 7",
+        },
+        {
+          id: "7",
+          hex: "#C82184",
+          name: "Color 8",
+        },
+        {
+          id: "8",
+          hex: "#31FCB4",
+          name: "Color 9",
+        },
+        {
+          id: "9",
+          hex: "#6D48D2",
+          name: "Color 10",
+        },
+      ],
+    },
+    border: {
+      style: "preset",
+      width: 12,
+      color: "ice_cream",
+    },
+    textScale: 1.4,
   },
-  titleDocument: buildChartTitleDocument({
+  content: {
     title: "Preset border",
-  }),
+  },
 };
 
 const configs: GraphConfig[] = [

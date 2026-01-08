@@ -1,9 +1,7 @@
 "use client";
 
-import { SPEND_BREAKDOWN } from "@/src/datasets/spend-breakdown";
 import { ReturnHome } from "@/src/ReturnHome";
 import {
-  buildChartTitleDocument,
   CustomPaletteCatalog,
   Graph,
   GraphConfig,
@@ -92,20 +90,44 @@ export default function CustomPalettes() {
 }
 
 const initialConfig: GraphConfig = {
-  data: SPEND_BREAKDOWN.data,
-  datasetConfig: SPEND_BREAKDOWN.config,
-  visualisationConfig: {
-    type: "pie",
-    legendPosition: "top",
+  type: "pie",
+  data: {
+    columns: [
+      {
+        key: "c1",
+        label: "Category",
+      },
+      {
+        key: "c2",
+        label: "Value",
+      },
+    ],
+    rows: [
+      {
+        c1: "Headcount",
+        c2: "$38,4560",
+      },
+      {
+        c1: "Legal",
+        c2: "$4,5780",
+      },
+      {
+        c1: "Marketing",
+        c2: "$9,4560",
+      },
+      {
+        c1: "Office",
+        c2: "$12,9850",
+      },
+    ],
   },
-  customAppearanceConfig: {
-    theme: "customPalette",
-    palette: "palette-1",
-    borderStyle: "none",
-    borderStyleName: null,
-    backgroundStyle: "transparent",
+  legend: {
+    position: "top",
   },
-  titleDocument: buildChartTitleDocument({
+  content: {
     title: "Headcount represents 59% of spend",
-  }),
+  },
+  appearance: {
+    paletteId: "palette-1",
+  },
 };

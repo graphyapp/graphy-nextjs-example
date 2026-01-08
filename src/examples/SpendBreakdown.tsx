@@ -1,10 +1,4 @@
-import {
-  buildChartTitleDocument,
-  Graph,
-  GraphProvider,
-  graphyLightTheme,
-} from "@graphysdk/core";
-import { SPEND_BREAKDOWN } from "../datasets/spend-breakdown";
+import { Graph, GraphProvider, graphyLightTheme } from "@graphysdk/core";
 import type { GraphSizing } from "@graphysdk/core";
 
 interface SpendBreakdownProps {
@@ -16,64 +10,84 @@ export const SpendBreakdown = ({ sizing }: SpendBreakdownProps) => {
     <GraphProvider
       theme={graphyLightTheme}
       config={{
-        data: SPEND_BREAKDOWN.data,
-        datasetConfig: SPEND_BREAKDOWN.config,
-        visualisationConfig: {
-          type: "donut",
-          locale: "EN_GB",
-          sortBars: false,
-          curveType: "linear",
-          xGoalValue: null,
-          yGoalValue: null,
-          useLogScale: false,
-          hasGridLines: true,
-          topAxisLabel: null,
-          comboPlotType: "grouped-bars",
-          customPowerUp: null,
-          hideCrossAxis: false,
-          leftAxisLabel: null,
-          presetPowerUp: null,
-          headlineMetric: null,
-          legendPosition: "top",
-          rightAxisLabel: null,
-          showDataLabels: true,
-          bottomAxisLabel: null,
-          customLineLabel: null,
-          customLineValue: null,
-          showStackTotals: false,
-          pieTotalPosition: "center",
-          showCategoryLabels: false,
-          customGoalLineLabel: null,
-          shouldStartFromZero: false,
-          averageLineSeriesKey: null,
-          showPercentageLabels: true,
-          reverseCrossAxisPosition: false,
+        type: "donut",
+        data: {
+          columns: [
+            {
+              key: "c1",
+              label: "Category",
+            },
+            {
+              key: "c2",
+              label: "Value",
+            },
+          ],
+          rows: [
+            {
+              c1: "Headcount",
+              c2: "$38,4560",
+            },
+            {
+              c1: "Legal",
+              c2: "$4,5780",
+            },
+            {
+              c1: "Marketing",
+              c2: "$9,4560",
+            },
+            {
+              c1: "Office",
+              c2: "$12,9850",
+            },
+          ],
         },
-        customAppearanceConfig: {
-          font: "technical",
-          theme: "custom",
-          palette: null,
-          textScale: "1",
-          borderStyle: "none",
-          seriesConfig: {
-            series1: { color: "#3C82F6", lineType: "solid" },
-            series2: { color: "#85B3FF" },
-            series3: { color: "#85B3FF" },
-            series4: { color: "#85B3FF" },
+        options: {
+          isSmoothLine: false,
+          sortBars: false,
+          comboType: "grouped-bars",
+          pieTotalPosition: "center",
+        },
+        legend: {
+          position: "top",
+        },
+        appearance: {
+          seriesStyles: {
+            series1: {
+              customColor: "#3C82F6",
+              lineStyle: "solid",
+            },
+            series2: {
+              customColor: "#85B3FF",
+            },
+            series3: {
+              customColor: "#85B3FF",
+            },
+            series4: {
+              customColor: "#85B3FF",
+            },
+          },
+          textStyle: {
+            heading: {
+              fontId: "technical",
+            },
+            body: {
+              fontId: "technical",
+            },
           },
           highlightStyle: "fade-color",
-          shouldHideLogo: true,
-          borderStyleName: null,
-          shouldHideTitle: false,
-          shouldHideCaption: true,
-          shouldHideSubtitle: true,
-          shouldHideSourceSection: true,
-          backgroundStyle: "transparent",
         },
-        numberFormat: { abbreviation: "auto", decimalPlaces: "auto" },
-        titleDocument: buildChartTitleDocument({
+        content: {
           title: "Headcount represents 59% of spend",
-        }),
+          isSubtitleHidden: true,
+          isCaptionHidden: true,
+          isSourceHidden: true,
+        },
+        dataLabels: {
+          showDataLabels: true,
+          dataLabelFormat: "percentage",
+          showStackTotals: false,
+          showCategoryLabels: false,
+        },
       }}
     >
       <Graph isEditable={false} sizing={sizing} />
