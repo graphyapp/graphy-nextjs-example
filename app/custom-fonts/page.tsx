@@ -28,7 +28,23 @@ export default function CustomFonts() {
         rel="stylesheet"
       />
       <ReturnHome />
-      <GraphProvider config={config} theme={graphyLightTheme}>
+      <GraphProvider
+        config={config}
+        theme={graphyLightTheme}
+        fontList={[
+          {
+            id: "primary",
+            label: "Heading",
+            fontFamily: "'Nova Square', 'Georgia', 'Times New Roman', serif", // LOADED FROM GOOGLE FONTS
+          },
+          {
+            id: "secondary",
+            label: "Body",
+            fontFamily:
+              "'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Comic Neue', cursive", // SYSTEM FONTS
+          },
+        ]}
+      >
         <div className="flex p-5 max-w-6xl mx-auto items-center justify-center">
           <Graph isEditable={false} />
         </div>
