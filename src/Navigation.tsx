@@ -6,6 +6,9 @@ export const Navigation = () => {
       <h2 className="text-2xl font-bold">Examples</h2>
       <ul className="flex flex-col gap-2">
         <li>
+          <Link href="/graph-modes">Graph modes</Link>
+        </li>
+        <li>
           <Link href="/custom-palettes">Custom palettes</Link>
         </li>
         <li>
