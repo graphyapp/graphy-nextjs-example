@@ -1569,7 +1569,7 @@ export const GlobalEmissions = ({ sizing }: GlobalEmissionsProps) => {
         },
       }}
     >
-      <Graph isEditable={false} sizing={sizing} />
+      <Graph mode="readonly" sizing={sizing} />
     </GraphProvider>
   );
 };

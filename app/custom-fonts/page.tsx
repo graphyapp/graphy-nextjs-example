@@ -46,7 +46,7 @@ export default function CustomFonts() {
         ]}
       >
         <div className="flex p-5 max-w-6xl mx-auto items-center justify-center">
-          <Graph isEditable={false} />
+          <Graph mode="readonly" />
         </div>
       </GraphProvider>
     </>

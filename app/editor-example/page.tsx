@@ -80,7 +80,7 @@ export default function EditorExample() {
                 alignItems: "center",
               }}
             >
-              <Graph sizing={{ mode: "responsive" }} isEditable />
+              <Graph sizing={{ mode: "responsive" }} mode="editor" />
             </div>
             <div
               style={{

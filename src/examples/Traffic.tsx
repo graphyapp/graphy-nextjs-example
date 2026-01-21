@@ -230,7 +230,7 @@ export const Traffic = ({ sizing }: TrafficProps) => {
         ],
       }}
     >
-      <Graph isEditable={false} sizing={sizing} />
+      <Graph mode="readonly" sizing={sizing} />
     </GraphProvider>
   );
 };

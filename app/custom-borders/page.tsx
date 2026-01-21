@@ -32,7 +32,7 @@ export default function CustomFontsExample() {
         {configs.map((config, index) => (
           <li key={index}>
             <GraphProvider config={config} theme={graphyLightTheme}>
-              <Graph isEditable={false} />
+              <Graph mode="readonly" />
             </GraphProvider>
           </li>
         ))}

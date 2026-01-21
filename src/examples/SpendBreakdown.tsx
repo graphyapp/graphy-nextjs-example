@@ -90,7 +90,7 @@ export const SpendBreakdown = ({ sizing }: SpendBreakdownProps) => {
         },
       }}
     >
-      <Graph isEditable={false} sizing={sizing} />
+      <Graph mode="readonly" sizing={sizing} />
     </GraphProvider>
   );
 };
