@@ -26,6 +26,9 @@ export const Navigation = () => {
         <li>
           <Link href="/waterfall-colors">Waterfall colors</Link>
         </li>
+        <li>
+          <Link href="/ai">Agents example</Link>
+        </li>
       </ul>
     </div>
   );
