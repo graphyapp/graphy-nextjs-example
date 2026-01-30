@@ -23,6 +23,9 @@ export const Navigation = () => {
         <li>
           <Link href="/custom-borders">Custom borders</Link>
         </li>
+        <li>
+          <Link href="/waterfall-colors">Waterfall colors</Link>
+        </li>
       </ul>
     </div>
   );
