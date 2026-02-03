@@ -464,6 +464,13 @@
     intl-messageformat "11.0.9"
     tslib "^2.8.0"
 
+"@graphysdk/ai@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@graphysdk/ai/-/ai-0.0.9.tgz#ba87b38abea6d5a0e31b2f80b8b2083c2e229426"
+  integrity sha512-U2AM2IUtK52esszekZzkBq6uOyCqDYfKv69ko/QaRHuAU/+CrT5yyjUMpaUKyWP9c/Vv3/yhA+8dPaIP3vc9kw==
+  dependencies:
+    zod "3.24.4"
+
 "@graphysdk/core@^0.0.68":
   version "0.0.68"
   resolved "https://registry.yarnpkg.com/@graphysdk/core/-/core-0.0.68.tgz#59fa6de8fdd26b3ce8d69b89be1da2b1b5abb768"
