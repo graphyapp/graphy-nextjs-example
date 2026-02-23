@@ -21,6 +21,12 @@ export const Navigation = () => {
           <Link href="/custom-fonts">Custom fonts</Link>
         </li>
         <li>
+          <Link href="/custom-theme">Custom theme</Link>
+        </li>
+        <li>
+          <Link href="/themed-editor">Themed editor</Link>
+        </li>
+        <li>
           <Link href="/custom-borders">Custom borders</Link>
         </li>
         <li>

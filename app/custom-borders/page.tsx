@@ -74,62 +74,6 @@ const noneConfig: GraphConfig = {
     ],
   },
   appearance: {
-    palette: {
-      id: "preset:graphy:graphy",
-      name: "Graphy",
-      colors: [
-        {
-          id: "0",
-          hex: "#B399FD",
-          name: "Color 1",
-        },
-        {
-          id: "1",
-          hex: "#FC8497",
-          name: "Color 2",
-        },
-        {
-          id: "2",
-          hex: "#FBBC30",
-          name: "Color 3",
-        },
-        {
-          id: "3",
-          hex: "#279EFF",
-          name: "Color 4",
-        },
-        {
-          id: "4",
-          hex: "#E83562",
-          name: "Color 5",
-        },
-        {
-          id: "5",
-          hex: "#40F8FF",
-          name: "Color 6",
-        },
-        {
-          id: "6",
-          hex: "#F38650",
-          name: "Color 7",
-        },
-        {
-          id: "7",
-          hex: "#C82184",
-          name: "Color 8",
-        },
-        {
-          id: "8",
-          hex: "#31FCB4",
-          name: "Color 9",
-        },
-        {
-          id: "9",
-          hex: "#6D48D2",
-          name: "Color 10",
-        },
-      ],
-    },
     border: {
       width: 0,
     },
@@ -173,62 +117,6 @@ const simpleConfig: GraphConfig = {
     ],
   },
   appearance: {
-    palette: {
-      id: "preset:graphy:graphy",
-      name: "Graphy",
-      colors: [
-        {
-          id: "0",
-          hex: "#B399FD",
-          name: "Color 1",
-        },
-        {
-          id: "1",
-          hex: "#FC8497",
-          name: "Color 2",
-        },
-        {
-          id: "2",
-          hex: "#FBBC30",
-          name: "Color 3",
-        },
-        {
-          id: "3",
-          hex: "#279EFF",
-          name: "Color 4",
-        },
-        {
-          id: "4",
-          hex: "#E83562",
-          name: "Color 5",
-        },
-        {
-          id: "5",
-          hex: "#40F8FF",
-          name: "Color 6",
-        },
-        {
-          id: "6",
-          hex: "#F38650",
-          name: "Color 7",
-        },
-        {
-          id: "7",
-          hex: "#C82184",
-          name: "Color 8",
-        },
-        {
-          id: "8",
-          hex: "#31FCB4",
-          name: "Color 9",
-        },
-        {
-          id: "9",
-          hex: "#6D48D2",
-          name: "Color 10",
-        },
-      ],
-    },
     border: {
       style: "grey",
       width: 1,
@@ -273,62 +161,6 @@ const customConfig: GraphConfig = {
     ],
   },
   appearance: {
-    palette: {
-      id: "preset:graphy:graphy",
-      name: "Graphy",
-      colors: [
-        {
-          id: "0",
-          hex: "#B399FD",
-          name: "Color 1",
-        },
-        {
-          id: "1",
-          hex: "#FC8497",
-          name: "Color 2",
-        },
-        {
-          id: "2",
-          hex: "#FBBC30",
-          name: "Color 3",
-        },
-        {
-          id: "3",
-          hex: "#279EFF",
-          name: "Color 4",
-        },
-        {
-          id: "4",
-          hex: "#E83562",
-          name: "Color 5",
-        },
-        {
-          id: "5",
-          hex: "#40F8FF",
-          name: "Color 6",
-        },
-        {
-          id: "6",
-          hex: "#F38650",
-          name: "Color 7",
-        },
-        {
-          id: "7",
-          hex: "#C82184",
-          name: "Color 8",
-        },
-        {
-          id: "8",
-          hex: "#31FCB4",
-          name: "Color 9",
-        },
-        {
-          id: "9",
-          hex: "#6D48D2",
-          name: "Color 10",
-        },
-      ],
-    },
     border: {
       style: "custom",
       width: 12,
@@ -374,62 +206,6 @@ const solidConfig: GraphConfig = {
     ],
   },
   appearance: {
-    palette: {
-      id: "preset:graphy:graphy",
-      name: "Graphy",
-      colors: [
-        {
-          id: "0",
-          hex: "#B399FD",
-          name: "Color 1",
-        },
-        {
-          id: "1",
-          hex: "#FC8497",
-          name: "Color 2",
-        },
-        {
-          id: "2",
-          hex: "#FBBC30",
-          name: "Color 3",
-        },
-        {
-          id: "3",
-          hex: "#279EFF",
-          name: "Color 4",
-        },
-        {
-          id: "4",
-          hex: "#E83562",
-          name: "Color 5",
-        },
-        {
-          id: "5",
-          hex: "#40F8FF",
-          name: "Color 6",
-        },
-        {
-          id: "6",
-          hex: "#F38650",
-          name: "Color 7",
-        },
-        {
-          id: "7",
-          hex: "#C82184",
-          name: "Color 8",
-        },
-        {
-          id: "8",
-          hex: "#31FCB4",
-          name: "Color 9",
-        },
-        {
-          id: "9",
-          hex: "#6D48D2",
-          name: "Color 10",
-        },
-      ],
-    },
     border: {
       style: "tinted",
       width: 12,
@@ -475,62 +251,6 @@ const gradientConfig: GraphConfig = {
     ],
   },
   appearance: {
-    palette: {
-      id: "preset:graphy:graphy",
-      name: "Graphy",
-      colors: [
-        {
-          id: "0",
-          hex: "#B399FD",
-          name: "Color 1",
-        },
-        {
-          id: "1",
-          hex: "#FC8497",
-          name: "Color 2",
-        },
-        {
-          id: "2",
-          hex: "#FBBC30",
-          name: "Color 3",
-        },
-        {
-          id: "3",
-          hex: "#279EFF",
-          name: "Color 4",
-        },
-        {
-          id: "4",
-          hex: "#E83562",
-          name: "Color 5",
-        },
-        {
-          id: "5",
-          hex: "#40F8FF",
-          name: "Color 6",
-        },
-        {
-          id: "6",
-          hex: "#F38650",
-          name: "Color 7",
-        },
-        {
-          id: "7",
-          hex: "#C82184",
-          name: "Color 8",
-        },
-        {
-          id: "8",
-          hex: "#31FCB4",
-          name: "Color 9",
-        },
-        {
-          id: "9",
-          hex: "#6D48D2",
-          name: "Color 10",
-        },
-      ],
-    },
     border: {
       style: "gradient",
       width: 12,
@@ -576,62 +296,6 @@ const presetConfig: GraphConfig = {
     ],
   },
   appearance: {
-    palette: {
-      id: "preset:graphy:graphy",
-      name: "Graphy",
-      colors: [
-        {
-          id: "0",
-          hex: "#B399FD",
-          name: "Color 1",
-        },
-        {
-          id: "1",
-          hex: "#FC8497",
-          name: "Color 2",
-        },
-        {
-          id: "2",
-          hex: "#FBBC30",
-          name: "Color 3",
-        },
-        {
-          id: "3",
-          hex: "#279EFF",
-          name: "Color 4",
-        },
-        {
-          id: "4",
-          hex: "#E83562",
-          name: "Color 5",
-        },
-        {
-          id: "5",
-          hex: "#40F8FF",
-          name: "Color 6",
-        },
-        {
-          id: "6",
-          hex: "#F38650",
-          name: "Color 7",
-        },
-        {
-          id: "7",
-          hex: "#C82184",
-          name: "Color 8",
-        },
-        {
-          id: "8",
-          hex: "#31FCB4",
-          name: "Color 9",
-        },
-        {
-          id: "9",
-          hex: "#6D48D2",
-          name: "Color 10",
-        },
-      ],
-    },
     border: {
       style: "preset",
       width: 12,

@@ -82,19 +82,21 @@ export default function EditorExample() {
             >
               <Graph sizing={{ mode: "responsive" }} mode="editor" />
             </div>
-            <div
-              style={{
-                gridColumn: "1",
-                gridRow: "2",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <DataTable />
-            </div>
-            <div style={{ gridColumn: "2", gridRow: "1 / 3" }}>
-              <Editor />
-            </div>
+            <EditorProvider>
+              <div
+                style={{
+                  gridColumn: "1",
+                  gridRow: "2",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <DataTable />
+              </div>
+              <div style={{ gridColumn: "2", gridRow: "1 / 3" }}>
+                <Editor />
+              </div>
+            </EditorProvider>
           </div>
         </GraphProvider>
       </ChakraProvider>
@@ -104,63 +106,61 @@ export default function EditorExample() {
 
 const Editor = () => {
   return (
-    <EditorProvider>
-      <Tabs.Root defaultValue="graph">
-        <Tabs.List>
-          <Tabs.Trigger value="graph">Graph</Tabs.Trigger>
-          <Tabs.Trigger value="axes">Axes</Tabs.Trigger>
-          <Tabs.Trigger value="color">Color</Tabs.Trigger>
-          <Tabs.Trigger value="elements">Elements</Tabs.Trigger>
-          <Tabs.Trigger value="annotate">Annotate</Tabs.Trigger>
-          <Tabs.Trigger value="powerUps">Power-ups</Tabs.Trigger>
-        </Tabs.List>
-        <Tabs.ContentGroup>
-          <Tabs.Content value="graph">
-            <GraphPanel>
-              <GraphTypeSection />
-              <GraphOptionsSection />
-              <LegendPositionSection />
-              <HeadlineNumberSection />
-              <NumberFormatSection />
-            </GraphPanel>
-          </Tabs.Content>
-          <Tabs.Content value="axes">
-            <AxesPanel>
-              <MainAxisSection />
-              <CrossAxisSection />
-            </AxesPanel>
-          </Tabs.Content>
-          <Tabs.Content value="color">
-            <ColorPanel>
-              <PaletteSection />
-              <ChartBackgroundSection />
-              <ChartBorderSection />
-              <HighlightColorSection />
-            </ColorPanel>
-          </Tabs.Content>
-          <Tabs.Content value="elements">
-            <ElementsPanel>
-              <TextVisibilitySection />
-              <SourceSection />
-              <TextSizeSection />
-            </ElementsPanel>
-          </Tabs.Content>
-          <Tabs.Content value="annotate">
-            <AnnotatePanel>
-              <CallOutSection hiddenButtons={["text"]} />
-              <HighlightSection />
-            </AnnotatePanel>
-          </Tabs.Content>
-          <Tabs.Content value="powerUps">
-            <PowerUpPanel>
-              <GoalPowerUpSection />
-              <TrendPowerUpSection />
-              <AveragePowerUpSection />
-            </PowerUpPanel>
-          </Tabs.Content>
-        </Tabs.ContentGroup>
-      </Tabs.Root>
-    </EditorProvider>
+    <Tabs.Root defaultValue="graph">
+      <Tabs.List>
+        <Tabs.Trigger value="graph">Graph</Tabs.Trigger>
+        <Tabs.Trigger value="axes">Axes</Tabs.Trigger>
+        <Tabs.Trigger value="color">Color</Tabs.Trigger>
+        <Tabs.Trigger value="elements">Elements</Tabs.Trigger>
+        <Tabs.Trigger value="annotate">Annotate</Tabs.Trigger>
+        <Tabs.Trigger value="powerUps">Power-ups</Tabs.Trigger>
+      </Tabs.List>
+      <Tabs.ContentGroup>
+        <Tabs.Content value="graph">
+          <GraphPanel>
+            <GraphTypeSection />
+            <GraphOptionsSection />
+            <LegendPositionSection />
+            <HeadlineNumberSection />
+            <NumberFormatSection />
+          </GraphPanel>
+        </Tabs.Content>
+        <Tabs.Content value="axes">
+          <AxesPanel>
+            <MainAxisSection />
+            <CrossAxisSection />
+          </AxesPanel>
+        </Tabs.Content>
+        <Tabs.Content value="color">
+          <ColorPanel>
+            <PaletteSection />
+            <ChartBackgroundSection />
+            <ChartBorderSection />
+            <HighlightColorSection />
+          </ColorPanel>
+        </Tabs.Content>
+        <Tabs.Content value="elements">
+          <ElementsPanel>
+            <TextVisibilitySection />
+            <SourceSection />
+            <TextSizeSection />
+          </ElementsPanel>
+        </Tabs.Content>
+        <Tabs.Content value="annotate">
+          <AnnotatePanel>
+            <CallOutSection hiddenButtons={["text"]} />
+            <HighlightSection />
+          </AnnotatePanel>
+        </Tabs.Content>
+        <Tabs.Content value="powerUps">
+          <PowerUpPanel>
+            <GoalPowerUpSection />
+            <TrendPowerUpSection />
+            <AveragePowerUpSection />
+          </PowerUpPanel>
+        </Tabs.Content>
+      </Tabs.ContentGroup>
+    </Tabs.Root>
   );
 };
 

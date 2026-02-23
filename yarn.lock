@@ -471,14 +471,14 @@
   dependencies:
     zod "3.24.4"
 
-"@graphysdk/core@^0.0.72":
-  version "0.0.72"
-  resolved "https://registry.yarnpkg.com/@graphysdk/core/-/core-0.0.72.tgz#1125bd4b3a16bf1295c1b6810b28b84f7a5e8c69"
-  integrity sha512-g+FYcfX61HCCXWl3ThZ5j7iZnDB7adoGT12z69+Q2YhnNGxGoVYFWOpE/1zT7QbHCcEWhN6Ht2DE8xBl6Ik1lA==
+"@graphysdk/core@^0.0.74-rc.1":
+  version "0.0.74-rc.1"
+  resolved "https://registry.yarnpkg.com/@graphysdk/core/-/core-0.0.74-rc.1.tgz#04148bfa8bdbe9fbb6faa4e27c27b8b690499601"
+  integrity sha512-tWJMYfNIuCQf6ws78qRiTXjv9dPurloGEBfBdK5czqrhn0tMFae0xDpUv30+HFEPuXarSnqPKwsDVK1uFn5GfA==
   dependencies:
     "@floating-ui/dom" "^1.6.0"
     "@floating-ui/react-dom" "^2.0.8"
-    "@graphysdk/i18n" "^0.0.72"
+    "@graphysdk/i18n" "^0.0.74-rc.1"
     arquero "^5.2.0"
     chroma-js "^3.1.2"
     color2k "^2.0.3"
@@ -497,26 +497,26 @@
     react-aria-components "^1.12.1"
     react-focus-lock "^2.13.6"
     react-intl "^8.0.6"
-    zod "3.24.4"
 
-"@graphysdk/editor@^0.0.72":
-  version "0.0.72"
-  resolved "https://registry.yarnpkg.com/@graphysdk/editor/-/editor-0.0.72.tgz#4e36f8aa0d1bf26c32d879ce2927535a2280ddab"
-  integrity sha512-LeHoXQYIjOf8qrDZ1P5lqYvp7YsTrvTcf7G0i3hQgCBknCsuT0kXhfuDApL1FtLzql2YoebW9cf5/06LJvgXiQ==
+"@graphysdk/editor@^0.0.74-rc.1":
+  version "0.0.74-rc.1"
+  resolved "https://registry.yarnpkg.com/@graphysdk/editor/-/editor-0.0.74-rc.1.tgz#4e3c049b01496604eb724c8a46eed79b807f9464"
+  integrity sha512-WOP+4r/LNZ4OrsT5Wb5pc31Od6tDHUAibuwhgAnNTLNiG4BBoIxj5+3cFo14OQTTP9InY4VX4MjnVYQg2ak++w==
   dependencies:
-    "@graphysdk/core" "^0.0.72"
-    "@graphysdk/i18n" "^0.0.72"
+    "@graphysdk/core" "^0.0.74-rc.1"
+    "@graphysdk/i18n" "^0.0.74-rc.1"
     immer "^10.0.3"
     lodash-es "^4.17.21"
     motion "^12.23.12"
     radix-ui "^1.4.3"
     react-intl "^8.0.6"
     react-window "^1.8.9"
+    use-storage-state "^7.0.0"
 
-"@graphysdk/i18n@^0.0.72":
-  version "0.0.72"
-  resolved "https://registry.yarnpkg.com/@graphysdk/i18n/-/i18n-0.0.72.tgz#afb31261efa77916bd3d1bd16ee5fd33d7efbaf1"
-  integrity sha512-dUPhtr2vrI0uhRT9O3qE3e+zBhI9WVXRQS56a9wVKauOWeG6S48Af+usk7Ty2YcRjPZkZBlLSy4T89qE3udd3g==
+"@graphysdk/i18n@^0.0.74-rc.1":
+  version "0.0.74-rc.1"
+  resolved "https://registry.yarnpkg.com/@graphysdk/i18n/-/i18n-0.0.74-rc.1.tgz#cb065dfecffc2d40a7939beb4aafb76f8a66e5cb"
+  integrity sha512-c59HyhE+hsxv6s4DZkmhJ3jkYddYgB4A7Es+qTg/f7nimC+gVczRVwCZA7G6vEAg18fkl/AQpIah6XfZG5Bl0g==
 
 "@img/colour@^1.0.0":
   version "1.0.0"
@@ -5279,6 +5279,11 @@ use-sidecar@^1.1.3:
   dependencies:
     detect-node-es "^1.1.0"
     tslib "^2.0.0"
+
+use-storage-state@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/use-storage-state/-/use-storage-state-7.0.0.tgz#3611e463f2d19775440712697c7e30d58b4efd02"
+  integrity sha512-srUrZLM1JwlagmGo7+SPtqYIlTK1VURcUl3368H+U8F/emQMpVzaqD8xA3VroHHPtjZVYV7t6VXhyiewyCf0Sg==
 
 use-sync-external-store@^1.4.0:
   version "1.5.0"
