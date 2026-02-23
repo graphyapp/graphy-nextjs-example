@@ -471,14 +471,14 @@
   dependencies:
     zod "3.24.4"
 
-"@graphysdk/core@^0.0.74-rc.0":
-  version "0.0.74-rc.0"
-  resolved "https://registry.yarnpkg.com/@graphysdk/core/-/core-0.0.74-rc.0.tgz#fdda1c4426ba9f597dbc01b1a494134b842b0bd1"
-  integrity sha512-MY9lVZ5kZquyQWbm68T08Ue6PAKpc9Osqfapk09YsUHyZpoN9shM4r/Yf8wodnoT4B0ELFKFW9mt72R/u7MthA==
+"@graphysdk/core@^0.0.74-rc.1":
+  version "0.0.74-rc.1"
+  resolved "https://registry.yarnpkg.com/@graphysdk/core/-/core-0.0.74-rc.1.tgz#04148bfa8bdbe9fbb6faa4e27c27b8b690499601"
+  integrity sha512-tWJMYfNIuCQf6ws78qRiTXjv9dPurloGEBfBdK5czqrhn0tMFae0xDpUv30+HFEPuXarSnqPKwsDVK1uFn5GfA==
   dependencies:
     "@floating-ui/dom" "^1.6.0"
     "@floating-ui/react-dom" "^2.0.8"
-    "@graphysdk/i18n" "^0.0.74-rc.0"
+    "@graphysdk/i18n" "^0.0.74-rc.1"
     arquero "^5.2.0"
     chroma-js "^3.1.2"
     color2k "^2.0.3"
@@ -498,13 +498,13 @@
     react-focus-lock "^2.13.6"
     react-intl "^8.0.6"
 
-"@graphysdk/editor@^0.0.74-rc.0":
-  version "0.0.74-rc.0"
-  resolved "https://registry.yarnpkg.com/@graphysdk/editor/-/editor-0.0.74-rc.0.tgz#c34cc07938853e1a7fda687a8abbb2b6fe22fb4d"
-  integrity sha512-+HZJVZdBf+6+A1SOwxlDAL58ySP9Wf5CLmM5pKGxvDnKSZjpPwjue7gnSMjL8fC704l+jTOVcblqddhNi4ryRA==
+"@graphysdk/editor@^0.0.74-rc.1":
+  version "0.0.74-rc.1"
+  resolved "https://registry.yarnpkg.com/@graphysdk/editor/-/editor-0.0.74-rc.1.tgz#4e3c049b01496604eb724c8a46eed79b807f9464"
+  integrity sha512-WOP+4r/LNZ4OrsT5Wb5pc31Od6tDHUAibuwhgAnNTLNiG4BBoIxj5+3cFo14OQTTP9InY4VX4MjnVYQg2ak++w==
   dependencies:
-    "@graphysdk/core" "^0.0.74-rc.0"
-    "@graphysdk/i18n" "^0.0.74-rc.0"
+    "@graphysdk/core" "^0.0.74-rc.1"
+    "@graphysdk/i18n" "^0.0.74-rc.1"
     immer "^10.0.3"
     lodash-es "^4.17.21"
     motion "^12.23.12"
@@ -513,10 +513,10 @@
     react-window "^1.8.9"
     use-storage-state "^7.0.0"
 
-"@graphysdk/i18n@^0.0.74-rc.0":
-  version "0.0.74-rc.0"
-  resolved "https://registry.yarnpkg.com/@graphysdk/i18n/-/i18n-0.0.74-rc.0.tgz#f9389c8fcf1b5cb31abbb754a729a58fcc901071"
-  integrity sha512-SJ7OXSp0R+hrXWeHichV9G6UtIw+gtF+z7y38satzvyH9InI46+SxDO1O0KBS3NjaENUS9k71eor1qaBNo6FYQ==
+"@graphysdk/i18n@^0.0.74-rc.1":
+  version "0.0.74-rc.1"
+  resolved "https://registry.yarnpkg.com/@graphysdk/i18n/-/i18n-0.0.74-rc.1.tgz#cb065dfecffc2d40a7939beb4aafb76f8a66e5cb"
+  integrity sha512-c59HyhE+hsxv6s4DZkmhJ3jkYddYgB4A7Es+qTg/f7nimC+gVczRVwCZA7G6vEAg18fkl/AQpIah6XfZG5Bl0g==
 
 "@img/colour@^1.0.0":
   version "1.0.0"

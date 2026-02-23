@@ -66,8 +66,7 @@ const editorialTheme: GraphTheme = {
     defaultBackground: "#F5F0E8",
     raisedBackground: "#FFFDF9",
     overlayBackground: "#FFFDF9ee",
-    overlayBorderGradient:
-      "linear-gradient(135deg, #DDD5C7 0%, #EBE5DA 100%)",
+    overlayBorderGradient: "linear-gradient(135deg, #DDD5C7 0%, #EBE5DA 100%)",
     border100: "#DDD5C7",
     border10: "#DDD5C720",
 
@@ -174,8 +173,7 @@ const modernTheme: GraphTheme = {
     defaultBackground: "#FFFFFF",
     raisedBackground: "#FFFFFF",
     overlayBackground: "#FFFFFFee",
-    overlayBorderGradient:
-      "linear-gradient(135deg, #E2E8F0 0%, #F1F5F9 100%)",
+    overlayBorderGradient: "linear-gradient(135deg, #E2E8F0 0%, #F1F5F9 100%)",
     border100: "#E2E8F0",
     border10: "#E2E8F015",
 
@@ -282,8 +280,7 @@ const midnightTheme: GraphTheme = {
     defaultBackground: "#0C1021",
     raisedBackground: "#131B2E",
     overlayBackground: "#131B2Eee",
-    overlayBorderGradient:
-      "linear-gradient(135deg, #2E3B54 0%, #1E2A42 100%)",
+    overlayBorderGradient: "linear-gradient(135deg, #2E3B54 0%, #1E2A42 100%)",
     border100: "#1E2A42",
     border10: "#1E2A4220",
 
@@ -318,9 +315,9 @@ const midnightTheme: GraphTheme = {
     stackedBarHoverBorderColor: "#0C1021",
 
     fontFamilyDefault:
-      "'DM Sans', 'Inter', -apple-system, 'Helvetica Neue', sans-serif",
+      "'Space Grotesk', 'Inter', -apple-system, 'Helvetica Neue', sans-serif",
     fontFamilyHeading:
-      "'DM Sans', 'Inter', -apple-system, 'Helvetica Neue', sans-serif",
+      "'Space Grotesk', 'Inter', -apple-system, 'Helvetica Neue', sans-serif",
     fontWeightRegular: "400",
     fontWeightMedium: "500",
     fontWeightSemibold: "600",
@@ -424,13 +421,11 @@ export default function CustomTheme() {
                 midnight: "#0C1021",
               }[activeTheme],
               padding: 24,
+              height: 420,
             }}
           >
             <GraphProvider config={variants[activeTheme]} theme={theme}>
-              <Graph
-                mode="readonly"
-                sizing={{ mode: "fixed", width: 880, height: 420 }}
-              />
+              <Graph mode="readonly" sizing={{ mode: "responsive" }} />
             </GraphProvider>
           </div>
         ))}
