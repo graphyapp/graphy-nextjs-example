@@ -471,14 +471,14 @@
   dependencies:
     zod "3.24.4"
 
-"@graphysdk/core@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@graphysdk/core/-/core-1.0.0.tgz#4148a86e014992ac5991a25b43e124719444717e"
-  integrity sha512-oM3TJcxR5Lx/VGjFUGD2R+s7dHTDc8PKuXz2zU8x1kG9bnYBnUKSA46IV5UKnK10dITGbU9tRPohH622qyyHQQ==
+"@graphysdk/core@1.2.0", "@graphysdk/core@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@graphysdk/core/-/core-1.2.0.tgz#617dc14964f204b182c467e7b36b366a7a114033"
+  integrity sha512-gbKHK+KW4fcCETPmwhDoqFZi5nZViPKHvPJW5vbLcp29qp/V1sqm9AyTjVbrOr7WAy9GB8Hey/gxN0I5UtmCjg==
   dependencies:
     "@floating-ui/dom" "^1.6.0"
     "@floating-ui/react-dom" "^2.0.8"
-    "@graphysdk/i18n" "^1.0.0"
+    "@graphysdk/i18n" "1.2.0"
     arquero "^5.2.0"
     chroma-js "^3.1.2"
     color2k "^2.0.3"
@@ -490,7 +490,7 @@
     d3-time "^2.1.1"
     date-fns "^3.3.1"
     humanize-duration "^3.32.0"
-    lodash-es "^4.17.21"
+    lodash-es "^4.17.23"
     motion "^12.23.12"
     nanoid "^3.3.7"
     radix-ui "^1.4.3"
@@ -498,25 +498,26 @@
     react-focus-lock "^2.13.6"
     react-intl "^8.1.1"
 
-"@graphysdk/editor@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@graphysdk/editor/-/editor-1.0.0.tgz#9fc3fbf6352e013f5a3f09d42dd1f8f338cc49ca"
-  integrity sha512-23FeIMKzzP7rPdHbpRfM+9vouwK4xFOSwOPNGPknwVASDWX2UqN7ujDUfF8g8tVFPft4yPNClYTONS/kYzhruA==
+"@graphysdk/editor@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@graphysdk/editor/-/editor-1.2.0.tgz#82a289e561b82d4498574d978e987a5e6e1933bf"
+  integrity sha512-hSz4UzW66Ru8UXKp5Fld+mSeGzHPs7lZckFCBMFDaTVGKLIuJK8j1HKVCm0FTWSzUVoo1+wUAGkLjNGYeiM7UQ==
   dependencies:
-    "@graphysdk/core" "^1.0.0"
-    "@graphysdk/i18n" "^1.0.0"
+    "@graphysdk/core" "1.2.0"
+    "@graphysdk/i18n" "1.2.0"
+    color2k "^2.0.3"
     immer "^10.0.3"
-    lodash-es "^4.17.21"
+    lodash-es "^4.17.23"
     motion "^12.23.12"
     radix-ui "^1.4.3"
     react-intl "^8.1.1"
     react-window "^1.8.9"
     use-storage-state "^7.0.0"
 
-"@graphysdk/i18n@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@graphysdk/i18n/-/i18n-1.0.0.tgz#9fb946ba86532586971fc9bb1251df4256fe8237"
-  integrity sha512-CAk3WbporAEug68anEj/ZlaPIILvHKoPXav4mz6JmllnsfruuFp7pfd5i0GRWlWlY8EMLtzNFnAZkip6TYZrzA==
+"@graphysdk/i18n@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@graphysdk/i18n/-/i18n-1.2.0.tgz#74d386e7b431e0dcbde2e2e22683897e133b909d"
+  integrity sha512-PEI9JgEPVsjC6GzjznzQiJFBhGSSdF6ERrYUMHitZdX8ttArhlCQUyGDnFBPaia4K6Ffizn0Q1luVmo+3Ggxog==
 
 "@img/colour@^1.0.0":
   version "1.0.0"
@@ -4379,10 +4380,10 @@ linkifyjs@^4.3.2:
   resolved "https://registry.yarnpkg.com/linkifyjs/-/linkifyjs-4.3.2.tgz#d97eb45419aabf97ceb4b05a7adeb7b8c8ade2b1"
   integrity sha512-NT1CJtq3hHIreOianA8aSXn6Cw0JzYOuDQbOrSPe7gqFnCpKP++MQe3ODgO3oh2GJFORkAAdqredOa60z63GbA==
 
-lodash-es@^4.17.21:
-  version "4.17.21"
-  resolved "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.21.tgz"
-  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+lodash-es@^4.17.23:
+  version "4.17.23"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.23.tgz#58c4360fd1b5d33afc6c0bbd3d1149349b1138e0"
+  integrity sha512-kVI48u3PZr38HdYz98UmfPnXl2DXrpdctLrFLCd3kOx1xUkOmpFPx7gCWWM5MPkL/fD8zb+Ph0QzjGFs4+hHWg==
 
 lodash.camelcase@^4.3.0:
   version "4.3.0"

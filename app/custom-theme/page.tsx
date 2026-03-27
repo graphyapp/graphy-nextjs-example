@@ -96,7 +96,6 @@ const editorialTheme: GraphTheme = {
     annotationFrameBorderColor: "#DDD5C7",
     annotationMenuTriggerIconColor: "#8C826F",
 
-    graphTypeIconAccentColor: "#C2704E",
     heatmapEmptyTileBackground: "#EBE5DA",
     stackedBarHoverBorderColor: "#FFFDF9",
 
@@ -203,7 +202,6 @@ const modernTheme: GraphTheme = {
     annotationFrameBorderColor: "#E2E8F0",
     annotationMenuTriggerIconColor: "#94A3B8",
 
-    graphTypeIconAccentColor: "#6366F1",
     heatmapEmptyTileBackground: "#F1F5F9",
     stackedBarHoverBorderColor: "#FFFFFF",
 
@@ -310,7 +308,6 @@ const midnightTheme: GraphTheme = {
     annotationFrameBorderColor: "#1E2A42",
     annotationMenuTriggerIconColor: "#5A6A8A",
 
-    graphTypeIconAccentColor: "#84CC16",
     heatmapEmptyTileBackground: "#131B2E",
     stackedBarHoverBorderColor: "#0C1021",
 
