@@ -133,7 +133,6 @@ const graphTheme: GraphTheme = {
     annotationFrameBorderColor: COLORS.border,
     annotationMenuTriggerIconColor: "#5068A0",
 
-    graphTypeIconAccentColor: COLORS.gold,
     heatmapEmptyTileBackground: COLORS.bg2,
     stackedBarHoverBorderColor: COLORS.bg1,
 
@@ -240,7 +239,9 @@ const graphTheme: GraphTheme = {
 };
 
 const editorTheme: EditorTheme = {
+  ...graphTheme,
   values: {
+    ...graphTheme.values,
     fontInputUnit: `400 0.6875rem/1.2 ${bodyFont}`,
     fontInlineError: `400 0.6875rem/1.3 ${bodyFont}`,
     fontToolbarButton: `500 0.75rem/1.2 ${bodyFont}`,
@@ -260,6 +261,7 @@ const editorTheme: EditorTheme = {
     fontSwitchLabel: `500 0.75rem/1.3 ${bodyFont}`,
     fontDataTableCell: `400 0.75rem/1.3 ${bodyFont}`,
     fontDataTableHeaderCell: `600 0.75rem/1.3 ${bodyFont}`,
+    graphTypeButtonIcon: COLORS.gold,
   },
 };
 
@@ -357,7 +359,7 @@ export default function ThemedEditor() {
             >
               <Graph sizing={{ mode: "responsive" }} mode="editor" />
             </div>
-            <EditorProvider theme={editorTheme} graphTheme={graphTheme}>
+            <EditorProvider theme={editorTheme}>
               <div
                 style={{
                   gridColumn: "1",
