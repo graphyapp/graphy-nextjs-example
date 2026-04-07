@@ -12,6 +12,9 @@ export const Navigation = () => {
           <Link href="/custom-palettes">Custom palettes</Link>
         </li>
         <li>
+          <Link href="/custom-components">Custom components</Link>
+        </li>
+        <li>
           <Link href="/editor-example">Editor example</Link>
         </li>
         <li>
