@@ -464,14 +464,14 @@
   dependencies:
     zod "3.24.4"
 
-"@graphysdk/core@1.3.0", "@graphysdk/core@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@graphysdk/core/-/core-1.3.0.tgz#811ab66f418df57c751fe32f5856137c80f5ee89"
-  integrity sha512-E8U6ZJiTSf+S+3+DU1LNVdNZoEw+rOYHvQLbdRKIlfOL8hv9PgV59Kx5PjPuZxO3RAjKoxt3aW+j1ZZP22o+ug==
+"@graphysdk/core@1.4.0", "@graphysdk/core@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@graphysdk/core/-/core-1.4.0.tgz#0b3439f06d2abdacdcbfc18e372a047c07310037"
+  integrity sha512-tMJ8RoYQaspCtWko4J7eMBfwfAhD8a4JekD8G+eIl0q4XvRqgXent9I7GxzUci8IJ855fYy1otLsp6eJQlaHsw==
   dependencies:
     "@floating-ui/dom" "^1.6.0"
     "@floating-ui/react-dom" "^2.0.8"
-    "@graphysdk/i18n" "1.3.0"
+    "@graphysdk/i18n" "1.4.0"
     arquero "^5.2.0"
     chroma-js "^3.1.2"
     color2k "^2.0.3"
@@ -491,13 +491,13 @@
     react-focus-lock "^2.13.6"
     react-intl "^8.1.3"
 
-"@graphysdk/editor@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@graphysdk/editor/-/editor-1.3.0.tgz#9121e3b61e5e180da7a5e7e9cdad53c53cea0410"
-  integrity sha512-HPUaJAN/k+ykqQ0RKZq2wi4tKFX0veNj+WOke4HLY0ajlq6PLUcSjT26fN6jmVpUbcN8mcDIhmGL1ucEHUl80Q==
+"@graphysdk/editor@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@graphysdk/editor/-/editor-1.4.0.tgz#db3f2ebefed477a033c2e84d42c9875d14dfb65b"
+  integrity sha512-bVQTC64102HL07ax5NZlQeFKvvWuTtYPPzhSfnM7CuNHUITU0eUlVR7DAiUYxwr0vk/JsMY5FidRiS1N+pgHOA==
   dependencies:
-    "@graphysdk/core" "1.3.0"
-    "@graphysdk/i18n" "1.3.0"
+    "@graphysdk/core" "1.4.0"
+    "@graphysdk/i18n" "1.4.0"
     color2k "^2.0.3"
     immer "^10.0.3"
     lodash-es "^4.18.1"
@@ -508,10 +508,10 @@
     react-window "^1.8.9"
     use-storage-state "^7.0.0"
 
-"@graphysdk/i18n@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@graphysdk/i18n/-/i18n-1.3.0.tgz#0135a4a59ff5873ca67c60b5474fa7540159434a"
-  integrity sha512-O1wtNT1ZaLDNMyMJ8a5mSEWnkKZ8yAOIIyvY+TUSegfOKCK3b8HnASwhCrSYMhUH4QiUEvVXxeJ+i2ViXsXR6w==
+"@graphysdk/i18n@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@graphysdk/i18n/-/i18n-1.4.0.tgz#651374fa735008aee3237fd0108a4edadc0dda4c"
+  integrity sha512-AEo1PzCCuN2Qlh7VxdNU+uSXW4NTscBIJFpWWUqY9cERI8X5qe06X6BAruHkzo1XU2nPI39Envb/CGo4wbGmgA==
 
 "@img/colour@^1.0.0":
   version "1.0.0"
